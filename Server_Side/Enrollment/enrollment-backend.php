@@ -9,28 +9,23 @@ class Show_admission extends DatabaseConnection{
     $stmt = $this->conn->prepare($admissiom_list);
     $stmt->execute(); 
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-    
-    return $data;
     $this->conn = null;
+    return $data;
       
     }
-
 
     public function Search_Pending_admission($search_name){
 
         $admissiom_list = "SELECT * FROM (SELECT * FROM tbl_admission ) tbl_admission 
         JOIN (SELECT * FROM tbl_student_info WHERE firstName LIKE '$search_name%' AND Student_Type = 'NE' or lastName LIKE '$search_name%' AND Student_Type = 'NE' ) tbl_student_info on tbl_admission.id = tbl_student_info.student_id GROUP BY tbl_admission.id";
-
         $stmt = $this->conn->prepare($admissiom_list);
         $stmt->execute(); 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
+        $this->conn = null;
         return $data;
 
     
-        $this->conn = null;
+   
           
     }
 
@@ -70,29 +65,6 @@ class Enrollment extends DatabaseConnection{
 
         }   
 
-        // tbl payment
-            
-            // $payment_insert = "INSERT INTO `tbl_semester_payment`(`student_id`, `payment`, `balance`, `status`,`enrollment_id`) VALUES (:student_id,:sub_payment,:balance,:status,:lastInsertedId)";
-            // $stmt3 = $this->conn->prepare($payment_insert);
-
-
-            // $sub_payment = floatval($voucher) + floatval($payment);
-            // $semester_fee = 4975 - floatval($voucher);
-            // if($payment >= $semester_fee){
-            //     $status = 'Fully Paid';
-            //     $balance = 0;
-            // }else{
-            //     $status = 'Not Fully Paid';
-            //     $balance = $semester_fee - floatval($payment);
-            // }
-
-            // $stmt3->bindParam(':student_id', $student_id);
-            // $stmt3->bindParam(':sub_payment', $sub_payment);
-            // $stmt3->bindParam(':status', $status);
-            // $stmt3->bindParam(':balance', $balance);
-            // $stmt3->bindParam(':lastInsertedId',$lastInsertedId);
-            // $stmt3->execute(); 
-
         // tbl student info
 
             $update_enrolled = "UPDATE `tbl_student_info` SET `Student_Type` = 'E' WHERE student_id = :student_id";
@@ -107,23 +79,17 @@ class Enrollment extends DatabaseConnection{
             $stmt5 = $this->conn->prepare($update_admission);
             $stmt5->bindParam(':student_id', $student_id);
             $stmt5->execute(); 
-
-            return 200;
-
-    
             $this->conn = null;
-
+            return 200;
+            
     }
 
 
     public function returnee_enrollment($student_id,$year,$semester,$section){
 
         // tbl enrollment
-
             $enroll = "INSERT INTO `tbl_enrollment`(`student_id`,`Section`, `Year`, `Sem`,`Cor`) VALUES (:student_id,:section,:year,:semester,:cor)";
             $stmt = $this->conn->prepare($enroll);
-
-
             $cor = "Not Generated";
             $stmt->bindParam(':student_id', $student_id);
             $stmt->bindParam(':year', $year);
@@ -131,29 +97,6 @@ class Enrollment extends DatabaseConnection{
             $stmt->bindParam(':section', $section);
             $stmt->bindParam(':cor', $cor);
             $stmt->execute();
-            $lastInsertedId = $this->conn->lastInsertId();
-
-        // tbl payment
-            
-            // $payment_insert = "INSERT INTO `tbl_semester_payment`(`student_id`, `payment`, `balance`, `status`,`enrollment_id`) VALUES (:student_id,:sub_payment,:balance,:status,:lastInsertedId)";
-            // $stmt3 = $this->conn->prepare($payment_insert);
-
-            // $sub_payment = floatval($voucher) + floatval($payment);
-            // $semester_fee = 4975 - floatval($voucher);
-            // if($payment >= $semester_fee){
-            //     $status = 'Fully Paid';
-            //     $balance = 0;
-            // }else{
-            //     $status = 'Not Fully Paid';
-            //     $balance = $semester_fee - floatval($payment);
-            // }
-
-            // $stmt3->bindParam(':student_id', $student_id);
-            // $stmt3->bindParam(':sub_payment', $sub_payment);
-            // $stmt3->bindParam(':status', $status);
-            // $stmt3->bindParam(':balance', $balance);
-            // $stmt3->bindParam(':lastInsertedId',$lastInsertedId);
-            // $stmt3->execute(); 
 
         // tbl student info
 
@@ -166,16 +109,10 @@ class Enrollment extends DatabaseConnection{
             $stmt5 = $this->conn->prepare($update_admission);
             $stmt5->bindParam(':student_id', $student_id);
             $stmt5->execute(); 
-
-            return 200;
-
-    
             $this->conn = null;
-
+            return 200;
     }
-
-
-        
+ 
     public function Show_Section(){
 
         $show_section= "SELECT * FROM ( SELECT * FROM tbl_section ) tbl_section JOIN 
@@ -183,13 +120,7 @@ class Enrollment extends DatabaseConnection{
        $stmt = $this->conn->prepare($show_section);
        $stmt->execute(); 
        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-       
-       return $data;
        $this->conn = null;
-          
+       return $data;  
     }
-
-
 }
-
-?>
