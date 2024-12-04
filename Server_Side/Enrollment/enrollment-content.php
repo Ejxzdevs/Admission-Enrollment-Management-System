@@ -79,28 +79,29 @@ if(isset($_POST['submit-enrollment'])){
     $result_section = $section->Show_Section();
 
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for="">Enrollment list</label>
-            
+            <label for="">Enrollment Applications list</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
           
-             
                 </div> 
-                <form action="enrollment.php" method="POST">
+                <form action="admission.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Name: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <button type="submit" name="src-submit">
+                        <i class="bi bi-search"></i>
+                    </button>
                 </form>
             </div>
             <div class="admission-content-body">
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 5em;">Student ID</th>
+                            <th style="width: 5em;">ID</th>
                             <th>Name</th>
                             <th>Admission Type</th>
                             <th>Date</th>
@@ -117,9 +118,9 @@ if(isset($_POST['submit-enrollment'])){
                             <td><?php echo $data['date']; ?></td>
                             <td>
                                 <?php if($data['admissionType'] == 'Transferee' || $data['admissionType'] == 'Freshmen' ){ ?>
-                                    <a href="javascript: open_enroll(<?php echo $data['student_id']; ?>);" >Enroll</a>
+                                    <a href="javascript: open_enroll(<?php echo $data['student_id']; ?>);" ><i class="bi bi-journal-check"></i></a>
                                 <?php }else if($data['admissionType'] == 'Returnee'){ ?>
-                                    <a href="javascript: open_returnee(<?php echo $data['student_id']; ?>);" >Enroll</a>
+                                    <a href="javascript: open_returnee(<?php echo $data['student_id']; ?>);" ><i class="bi bi-journal-check"></i></a>
                                 <?php } ?>
                             </td>
                             <td><?php  if($data['Student_Type'] == 'NE'){
@@ -145,13 +146,21 @@ if(isset($_POST['submit-enrollment'])){
 <div class="modal">
     <div class="modal-container">
         <div class="modal-header">
-            <label for="">Freshmen/Transferee Enrollment</label>
             <a href="javascript: close_message()"><img src="../../Icons/close.png" ></a>
         </div>
         <div class="modal-body">
             <form action="enrollment.php" method="POST">
                 <div class="requirements">
                     <div class="checklist">
+                        <div class="row" >
+                        <label 
+                        style='
+                        font-size: 22px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        padding: 5rem 0;
+                        '>Freshmen/Transferee Enrollment</label>
+                        </div>
                         <div class="row">
                             <input type="checkbox" name="requirements[]" value="Form 138 (Report Card)">
                             <label for="">Form 138 (Report Card)</label>
@@ -184,9 +193,8 @@ if(isset($_POST['submit-enrollment'])){
                             <input type="checkbox" name="requirements[]" value="Honorable Dismissal">
                             <label for="">Honorable Dismissal</label>
                             <input type="text" name="student_id" id="student_id" hidden>
-                        </div>                      
-                    </div>
-                    <div class="remark">
+                        </div>
+                        <div class="remark">
                         <select name="year" id="">
                             <option disabled>Year</option>
                             <option value="First Year">First Year</option>
@@ -209,8 +217,11 @@ if(isset($_POST['submit-enrollment'])){
                     </div>
                     <div class="bal-remark">
                         <textarea id="myTextarea" name="remark" cols="20" rows="3" placeholder="Remark: "></textarea>
-                        <button type="submit" name="submit-enrollment">ENROLLED</button>
+                        <button type="submit" name="submit-enrollment">Enroll</button>
+                    </div>              
                     </div>
+                    
+                  
                 </div>
 
             </form>
@@ -220,17 +231,24 @@ if(isset($_POST['submit-enrollment'])){
 
 <!-- returnee -->
 
-<div class="modal-returnee">
+<div class="modal-returnee" >
     <div class="returnee-container">
         <div class="head-returnee">
-            <label for="">Returnee Enrollment</label>
             <a href="javascript: close_returnee();"><img class="icons" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-returnee">
             <form action="enrollment.php" method="POST">
-
+                <div class="returnee-header" >
+                    <label 
+                        style='
+                            font-size: 22px;
+                            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                            font-weight: bold;
+                            padding: 5rem 0;
+                                '
+                    >Returnee Enrollment</label>
+                </div>
                 <div class="row-returnee">
-
                     <div class="returnee-info">
                             <label for="">Year</label>
                         <select name="year" id="">
@@ -271,45 +289,24 @@ if(isset($_POST['submit-enrollment'])){
     </div>
 </div>
 
-
-
 <script>
-
     let modalreturnee = document.querySelector('.modal-returnee');
-
     function open_returnee(id){
         document.querySelector('#returnee_id').value = id;
         modalreturnee.style.display="FLEX";
     }
-
     function close_returnee(){
         modalreturnee.style.display="NONE";
-
-
-
     }
 
-
-
-
-
-
-
-
-
-// 
-      let openModal = document.querySelector('.modal');
+    let openModal = document.querySelector('.modal');
     function open_enroll(id){
-        
         document.querySelector('#student_id').value = id;
         openModal.style.display ="Flex";
-    
     }
-
     function close_message(){
         openModal.style.display ="None";
     } 
-
 
     function hello(){
        document.getElementById("bill").textContent = '4975';
@@ -318,9 +315,7 @@ if(isset($_POST['submit-enrollment'])){
 
         let result =  parseFloat(bill) - parseFloat(voucher);
         document.getElementById("bill").textContent = result;
-
     }
-
 
     function hi(){
        document.getElementById("r-bill").textContent = '4975';
@@ -331,6 +326,5 @@ if(isset($_POST['submit-enrollment'])){
         let result =  parseFloat(bill) - parseFloat(voucher);
         console.log(result);
         document.getElementById("r-bill").textContent = result;
-
     }
 </script>
