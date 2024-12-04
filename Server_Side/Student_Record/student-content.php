@@ -126,15 +126,12 @@ if(isset($_POST['btn-update'])){
 
 }
 
-
-
-
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
             <label for="">Student Information</label>
-            
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
@@ -166,7 +163,7 @@ if(isset($_POST['btn-update'])){
                 </div> 
                 <form action="student.php" method="post">
                     <input type="text" name="search_name" placeholder="Search Name: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <button type="submit" name="src-submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
             <div class="admission-content-body">
@@ -186,13 +183,13 @@ if(isset($_POST['btn-update'])){
                     <?php foreach($result_student as $student ){ ?>
                     <tbody>
                         <tr>
-                            <td><?php echo $student['student_id'] ?></td>
-                            <td><?php echo $student['firstName'] . " " . $student['lastName'] ?></td>
-                            <td><?php echo date('M-d-Y',strtotime($student['date'])) ?></td>
-                            <td><?php echo $student['course'] ?></td>
-                            <td><?php echo $student['Year'] ?></td>
-                            <td><?php echo $student['Sem'] ?></td>
-                            <td><?php echo $student['section_name'] ?></td>
+                            <td><p><?php echo $student['student_id'] ?></p></td>
+                            <td style="width: 400px;" ><p><?php echo $student['firstName'] . " " . $student['lastName'] ?></p></td>
+                            <td><p><?php echo date('M-d-Y',strtotime($student['date'])) ?></p></td>
+                            <td><p><?php echo $student['course'] ?></p></td>
+                            <td><p><?php echo $student['Year'] ?></p></td>
+                            <td style="width: 400px;"><p><?php echo $student['Sem'] ?></p></td>
+                            <td><p><?php echo $student['section_name'] ?></p></td>
                             <td>          
                                <a href="javascript: edit_info(
                                 '<?php echo $student['enrollment_id'] ?>',
@@ -234,16 +231,16 @@ if(isset($_POST['btn-update'])){
 
 
                                );">
-                                    <img class="icons" src="../../Icons/edit.png" alt="" srcset="">
+                                    <img style="height: 16px;" src="../../Icons/edit.png" alt="" srcset="">
                                 </a>
                                 <a href="student.php?id_delete=<?php echo $student['student_id']; ?>">
-                                    <img class="icons" src="../../Icons/delete.png" alt="" srcset="">
+                                    <img style="height: 16px;" src="../../Icons/delete.png" alt="" srcset="">
                                 </a>
                                 <a href="../Admission/admission_view.php?id=<?php echo $student['student_id'] ?>" target="_blank">
-                                    <img class="icons" src="../../Icons/profile.png" >
+                                    <img style="height: 16px;" src="../../Icons/profile.png" >
                                 </a>
                                 <a href="schedule_view.php?id=<?php echo $student['schedule_id'] ?> &&name=<?php echo $student['lastName'] ?> " target="_blank">
-                                    <img class="icons" src="../../Icons/weekly.png" >
+                                    <img style="height: 16px;" src="../../Icons/weekly.png" >
                                 </a>
                         </tr>
                     </tbody>
