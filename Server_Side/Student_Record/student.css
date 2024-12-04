@@ -7,7 +7,8 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    padding: 1em 1em 0 3em;
+    padding: 1em 1em 0 1em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .sub-admission-container{
@@ -18,8 +19,6 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    padding: 1em 1em 0 1em;
-    
 }
 
 .admission-header{
@@ -32,16 +31,11 @@
 }
 
 .admission-header label{
-    font-size: 1.6em;
-    color: #8C999F;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 16px 0 rgba(68, 88, 144, 0.14);
+    font-size: 1.2em;
 }
 .admission-content{
     margin: 1em 0 0 0;
     background-color: #F3F8FA;
-    box-shadow: 0 5px 16px 0 rgba(68, 88, 144, 0.14);
     border: solid 1px #F3F8FA ;
     height: auto;
     width: 100%;
@@ -51,27 +45,21 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-   
-
-    /* background-color: aqua; */
 }
 
 /* LEFT */
 .admission-content-header > .label-container{
-    width: 50%;
+    width: 65%;
     height: 100%;
     display: flex;
-    align-items: center;
-    padding-left: 1em;
-    /* background-color: #4796BD; */
 }
 
 .label-container form{
     height: 100%;
     width: 100%;
-    /* background-color: greenyellow; */
     padding: .5em 1em;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: .4em;
 }
@@ -79,9 +67,10 @@
 .label-container form  > button{
     height: 2em;
     width: 8em;
-    background-color: #4796BD;
+    background-color: #0879BB;
     color: white;
     letter-spacing: 1px;
+    border: none;
 }
 
 .label-container form > select , option{
@@ -90,7 +79,7 @@
     text-align: center;
     color: white;
     border-radius: 5px;
-    background-color: #8C999F;
+    background-color: #1686C7;
     font-weight: 700;
     cursor: pointer;
 }
@@ -102,29 +91,28 @@
 
 /* RIGHT */
 .admission-content-header > form{
-    width: 50%;
+    width: 35%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     flex-direction: row;
-    gap: .5em;
+    padding-right: 1em;
 }
 
 .admission-content-header > form > input{
     height: 2.5em;
     width: 20em;
-    border: solid 1px #95A5A6;
     padding-left: 1em;
 }
 
 .admission-content-header > form > button{
     height: 2.5em;
-    width: 10em;
+    padding: 10px;
     font-size: 1.2e;
-    letter-spacing: 1px;
     color: white;
-    background-color: #95A5A6;
+    background-color: #0879BB;
+    border: none;
 }
 
 
@@ -140,7 +128,6 @@
 .admission-content-body{
     height: auto;
     width: 100%;
-
     padding: 0 1em 15em 1em;
 }
 /* table design */
@@ -152,8 +139,8 @@
 }
 
 .admission-content-body table thead tr{
-	background-color: #95A5A6;
- 	font-size: 1em;
+	background-color: #0879BB;
+ 	font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
  	letter-spacing: 1px;
 	color: white;
@@ -173,8 +160,7 @@
 	text-align: center;
 	color: #2e2e1f;
 	cursor: pointer;
-	height: 30px;
-	border-bottom: solid .5px black;
+	border-bottom: solid .5px grey;
 }
 
 .admission-content-body tbody tr:hover{
@@ -185,9 +171,7 @@
 }
 
 .admission-content-body tbody tr td{
-	padding: 1em 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
+    line-height: 25px;
 
 }
 
@@ -197,16 +181,11 @@
 }
 
 .admission-content-body tbody > tr > td > a{
-    margin: 0 .4em;
+    
 }
-.action-icons{
-    height: 2em;
- 
-}
-
-.cross{
-    height: 1.4em;
-    margin: 0 0 .3em 0;
+.admission-content-body tbody > tr > td > p{
+    font-size: 14px;
+    
 }
 /* FOR MODAL */
 .modal {
