@@ -34,28 +34,27 @@ if(isset($_POST['submit-update'])){
 
 
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
             <label for="">Student Requirements</label>
-            
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
           
-             
                 </div> 
                 <form action="requirement.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Name: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <button type="submit" name="src-submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
             <div class="admission-content-body">
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 5em;">Student ID</th>
+                            <th style="width: 5em;">ID</th>
                             <th>Name</th>
                             <th>Date Update</th>
                             <th>Action</th>
@@ -88,22 +87,37 @@ if(isset($_POST['submit-update'])){
 <div class="modal">
     <div class="modal-container"> 
         <div class="header-course">
-            <label for="">Requirements Submitted</label>
              <a href="javascript: close_course()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
-        <div class="body-course">  
+        <div style="padding: 1rem 3rem 0;" >
+        <label 
+            style='
+            font-size: 22px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            '>Requirements</label> 
+        </div>
+        <div class="body-course"> 
+           
         </div>
     </div>
 </div>
-<!-- add requirments -->
 
+<!-- update requirments -->
 <div class="modal" id="add-requirements">
     <div class="modal-container" id="modal-requirements"> 
         <div class="header-course" id="head-requirements">
-            <label for="">Add Requirements</label>
              <a href="javascript: close_requirements()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course" id="requirement-body">
+        <div style="padding: 1rem 2rem 0;" >
+        <label 
+            style='
+            font-size: 22px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            '>Update Requirements</label> 
+        </div>
             <form action="requirement.php" method="post">
                         <div class="req-row">
                             <input type="checkbox" name="requirements[]" value="Form 138 (Report Card)">
