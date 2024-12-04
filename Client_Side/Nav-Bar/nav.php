@@ -6,24 +6,24 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav" >
-      <ul class="navbar-nav container d-flex gap-2 align-items-center justify-content-end"  >
+      <ul class="navbar-nav container d-flex align-items-center justify-content-end"  >
         <li class="nav-item">
-          <a class="nav-link fs-6" href="../Home/home.php">Home</a>
+          <a class="nav-link" style="font-size: 14px; " href="../Home/home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a  class="nav-link fs-6" href="../About/about.php">About</a>
+          <a  class="nav-link" style="font-size: 14px;" href="../About/about.php">About</a>
         </li>
         <li class="nav-item">
-          <a   class="nav-link fs-6" href="../Courses/courses.php">Courses</a>
+          <a   class="nav-link" style="font-size: 14px;" href="../Courses/courses.php">Courses</a>
         </li>
         <li class="nav-item">
-          <a   class="nav-link fs-6" href="../Inquire/inquire.php">Inquiry</a>
+          <a   class="nav-link" style="font-size: 14px;" href="../Inquire/inquire.php">Inquiry</a>
         </li>
         <li class="nav-item">
-          <a   class="nav-link fs-6" href="../Public_Notice/public.php">Public Notice</a>
+          <a   class="nav-link" style="font-size: 14px;" href="../Public_Notice/public.php">Public Notice</a>
         </li>
         <li class="nav-item">
-          <a   class="nav-link fs-6" href="../Admission/admission.php">Admission</a>
+          <a   class="nav-link" style="font-size: 14px;" href="../Admission/admission.php">Admission</a>
         </li>
         
       </ul>
