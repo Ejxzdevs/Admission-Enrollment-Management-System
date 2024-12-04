@@ -56,7 +56,7 @@ $result_section = $show_section->Show_Section();
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for="">Reports</label>
+            <label for="">Report List</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
@@ -126,13 +126,20 @@ $result_section = $show_section->Show_Section();
 <div class="modal">
    <div class="report-container">
         <div class="header-report">
-            <label for="">Generate Report</label>
             <a href="javascript: close_report()"><img class="close-report" src="../../icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-report">
             <form action="report.php" method="post">
             <div class="report-header-row">
-           
+                <label style='
+                        font-size: 18px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        padding: 5rem 0;
+                    
+                        '>
+                        Generate Report    
+                        </label>
             </div>
             <div class="report-row">
                 <select name="report" id="report-list" onchange="report_list()">
