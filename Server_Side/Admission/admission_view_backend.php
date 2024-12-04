@@ -16,9 +16,9 @@ class Show_Student extends DatabaseConnection{
         $stmt1 = $this->conn->prepare($admissiom_update);
         $stmt1->bindParam(':id_admission', $id_admission);
         $stmt1->execute(); 
-
-        return $data;
         $this->conn = null;
+        return $data;
+     
           
 
     
