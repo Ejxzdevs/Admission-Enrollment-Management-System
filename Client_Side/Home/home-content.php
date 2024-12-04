@@ -11,10 +11,6 @@ $result_course  = $display_course ->Count_Course();
 
 
 ?>
-
-
-
-
 <div class="header-content">
     <div class="header-content-container">
         <div class="sub-header" >
@@ -59,22 +55,22 @@ $result_course  = $display_course ->Count_Course();
         
     </div>
     <!-- 2 -->
-    <div class="vision-mision">
+    <div class="vision-mision py-2">
         <div class="img-container">
             <div class="img-border">
-                <img src="../../Background/mission-vission.jpg" alt="">
+                <img class="rounded" src="../../Background/mission-vission.jpg" alt="">
             </div>
         </div>
         <div class="mission-vision-content">
             <div class="mv-content">
-                   <h5>BCP MISSION & VISION</h5>
-                   <p>Bestlink College of the Philippines’s mission and vision is committed in providing quality education to our youth. BCP meets and provides adequate facilities and services not to mention the competent and qualified instructors eagerly and enthusiastically extending and sharing their help for the welfare of the studentry.BCP vision aspires students to be a synergy of diverse and highly qualified students interacting with dedicated scholars, teachers and practitioners in a dynamic and student-centered environment. BCP mission offers students a vibrant and dynamic environment from which to enter the legal professional. They encourage students to be lifelong professionals who are actively engaged in the development of our society. Also they provide a strong foundation to fulfil the dreams of their students. Bestlink College of the Philippines give students the opportunities to concentrate on specialty areas in order to come up their skills, hands-on experienced in the classroom and through public service.</p>
+                   <h5 class="fw-medium fs-5" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"  >BCP MISSION & VISION</h5>
+                   <p class="text-secondary" >Bestlink College of the Philippines’s mission and vision is committed in providing quality education to our youth. BCP meets and provides adequate facilities and services not to mention the competent and qualified instructors eagerly and enthusiastically extending and sharing their help for the welfare of the studentry.BCP vision aspires students to be a synergy of diverse and highly qualified students interacting with dedicated scholars, teachers and practitioners in a dynamic and student-centered environment. BCP mission offers students a vibrant and dynamic environment from which to enter the legal professional. They encourage students to be lifelong professionals who are actively engaged in the development of our society. Also they provide a strong foundation to fulfil the dreams of their students. Bestlink College of the Philippines give students the opportunities to concentrate on specialty areas in order to come up their skills, hands-on experienced in the classroom and through public service.</p>
             </div>
         </div>
     </div>
     <!-- 3 -->
-    <div class="req-container">
-        <h5>Requirements for Enrollment</h5>
+    <div class="req-container ps-3 pt-2" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"  >
+        <label class="fw-medium fs-3" >Requirements for Enrollment</label>
         <p>1. Click here for <a href="../Admission/admission.php"> Admission Registration. </a></p>
         <p>2. Once registered, visit the Admission office of Bestlink Collge of Philippines Bulacan for the submission of requirements.<br> The said office is open from Monday to Friday, 8am-5pm (except Holidays).</p>
         <p>*No need to wait for an email or text message, you may visit the admission office to <br> submit your requirements once done with the registration for as long as you have <br> your registration key.</p>
