@@ -12,21 +12,22 @@ if(isset($_POST['src-submit'])){
 
 
 ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for="">List of Inquiries</label>
-   
+            <label for="">Inquiries List</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
-                    <label for="">Inquiries</label>
+
                 </div> 
                 <form action="inquiry.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Name: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <button type="submit" name="src-submit">
+                        <i class="bi bi-search"></i>
+                    </button>
                 </form>
             </div>
             <div class="admission-content-body">
@@ -45,12 +46,12 @@ if(isset($_POST['src-submit'])){
                     <?php foreach($result_pending  as $data){?>
                     <tbody>
                         <tr>
-                            <td><?php echo $data['id_inquiry']; ?></td>
-                            <td><?php echo $data['name']; ?></td>
-                            <td><?php echo $data['email']; ?></td>
-                            <td><?php echo $data['contact']; ?></td>
-                            <td><?php echo $data['date_inquiry']; ?></td>
-                            <td><a href="#" onclick="open_messages('<?php echo $data['name']; ?>','<?php echo $data['messages']; ?>',<?php echo $data['id_inquiry']; ?>)">
+                            <td><p><?php echo $data['id_inquiry']; ?></p></td>
+                            <td><p><?php echo $data['name']; ?></p></td>
+                            <td><p><?php echo $data['email']; ?></p></td>
+                            <td><p><?php echo $data['contact']; ?></p></td>
+                            <td><p><?php echo $data['date_inquiry']; ?></p></td>
+                            <td><a href="#" onclick="open_messages('<?php echo $data['email']; ?>','<?php echo $data['messages']; ?>',<?php echo $data['id_inquiry']; ?>)">
                             <?php if($data['inquiry_status'] == 'Pending'){ ?>
                             <img id="view"  src="../../Icons/view.png" alt="" srcset="">
                                 <?php }ELSE { ?>
@@ -70,12 +71,11 @@ if(isset($_POST['src-submit'])){
 <div class="modal">
     <div class="modal-container">
         <div class="modal-header">
-            <label for="">INQUIRE</label>
             <a href="javascript: close_message()"><img src="../../Icons/close.png" ></a>
         </div>
         <div class="modal-body">
-            <label id="name">Ejhay Gofredo</label>
-            <p id="message-content"></p>
+            <label>Inquiry From: <span style="font-size: 14px ; color:#7f8385;" id="name" ></span></label>
+            <textarea id="message-content" rows="10" disabled style="padding: 5px 0 0 5px ;" ></textarea>
         </div>
     </div>
 </div>
