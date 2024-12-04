@@ -12,21 +12,22 @@ if(isset($_POST['src-submit'])){
 
 
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for="">List of Admission Application</label>
-            
+            <label>Admission Applications List</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
           
-             
                 </div> 
                 <form action="admission.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Name: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <button type="submit" name="src-submit">
+                        <i class="bi bi-search"></i>
+                    </button>
                 </form>
             </div>
             <div class="admission-content-body">
