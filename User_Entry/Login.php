@@ -77,9 +77,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
                     </label>
                 </div>
                 <div class="login-btn">
-                    <button type="submit">LOGIN</button>
+                    <button type="submit">SUBMIT</button>
                 </div>
-
             </form>
         </div>
     </div>
