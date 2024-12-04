@@ -6,17 +6,16 @@ class Show_admission extends DatabaseConnection{
 
     $admissiom_list = "SELECT 
     tbl_admission.*,
-    tbl_student_info.*
-FROM 
-    tbl_admission 
-JOIN 
-    tbl_student_info 
-    ON tbl_admission.id = tbl_student_info.student_id 
-WHERE 
-    tbl_student_info.Student_Type = 'NE'
-ORDER BY 
-    tbl_admission.date ASC;
-";
+    tbl_student_info.* 
+    FROM tbl_admission 
+    JOIN 
+        tbl_student_info 
+        ON tbl_admission.id = tbl_student_info.student_id 
+    WHERE 
+        tbl_student_info.Student_Type = 'NE'
+    ORDER BY 
+        tbl_admission.date ASC;
+    ";
     $stmt = $this->conn->prepare($admissiom_list);
     $stmt->execute(); 
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
