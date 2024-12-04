@@ -3,45 +3,30 @@ include "../../Connection/connection.php";
 
 class Student_Record extends DatabaseConnection{
     public function Show_Requirements(){
-
-    $admissiom_list = "SELECT * FROM (SELECT * FROM tbl_requirements ) tbl_requirements
-    JOIN (SELECT * FROM tbl_student_info ) tbl_student_info on tbl_requirements.student_id = tbl_student_info.student_id 
-    JOIN (SELECT * FROM tbl_enrollment ) tbl_enrollment on tbl_student_info.student_id  = tbl_enrollment.student_id  
-    Group by tbl_enrollment.student_id ";
+    $admissiom_list = "SELECT * FROM tbl_student_info JOIN tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id ";
     $stmt = $this->conn->prepare($admissiom_list);
     $stmt->execute(); 
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-    
-    return $data;
     $this->conn = null;
-      
+    return $data;
+   
     }
-
     public function Search_Requirements($search_name){
 
-        $admissiom_list = "SELECT * FROM (SELECT * FROM tbl_requirements ) tbl_requirements
-        JOIN (SELECT * FROM tbl_student_info WHERE firstName LIKE '$search_name%' or lastName LIKE '$search_name%' ) tbl_student_info on tbl_requirements.student_id = tbl_student_info.student_id 
-        JOIN (SELECT * FROM tbl_enrollment ) tbl_enrollment on tbl_student_info.student_id  = tbl_enrollment.student_id  
-        Group by tbl_enrollment.student_id ";
+        $admissiom_list = "SELECT * FROM tbl_student_info JOIN tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id WHERE tbl_student_info.firstName LIKE '%$search_name%' OR tbl_student_info.lastName LIKE '%$search_name%'";
 
         $stmt = $this->conn->prepare($admissiom_list);
         $stmt->execute(); 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
+        $this->conn = null;
         return $data;
 
-    
-        $this->conn = null;
-          
     }
 
     public function update_requirements($id,$items,$remark){
 
-
-        // loop the items bcuz it is array
-        foreach($items as $requirements){
+    // loop the items bcuz it is array
+    foreach($items as $requirements){
 
             $insert_requirements = "INSERT INTO `tbl_requirements`(`student_id`,`requirement_name`) VALUES (:id,:requirements)";
             $stmt2 = $this->conn->prepare($insert_requirements);
@@ -58,17 +43,14 @@ class Student_Record extends DatabaseConnection{
             $stmt->bindParam(':id', $id);
             $stmt->bindParam(':remark', $remark);
             $stmt->execute();
-
-            return 200;
             $this->conn = null;
-
-
+            return 200;
+          
     }
 
     // PAYMENT
 
     public function Show_Payment(){
-
         $admissiom_list = "SELECT * FROM (SELECT * FROM tbl_semester_payment ) tbl_semester_payment
         JOIN (SELECT * FROM tbl_student_info WHERE Student_Type = 'E' ) tbl_student_info on tbl_semester_payment.student_id = tbl_student_info.student_id 
         JOIN (SELECT * FROM tbl_enrollment order by date desc ) tbl_enrollment on tbl_semester_payment.enrollment_id  = tbl_enrollment.enrollment_id  
@@ -77,11 +59,9 @@ class Student_Record extends DatabaseConnection{
         $stmt->execute(); 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    
-        
-        return $data;
         $this->conn = null;
-          
+        return $data;
+              
         }
 
     
@@ -95,11 +75,11 @@ class Student_Record extends DatabaseConnection{
             $stmt = $this->conn->prepare($admissiom_list);
             $stmt->execute(); 
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
+            $this->conn = null;
             return $data;
     
         
-            $this->conn = null;
+            
               
         }
 
@@ -124,9 +104,9 @@ class Student_Record extends DatabaseConnection{
             $stmt->bindParam(':total_paid', $total_paid);
             $stmt->bindParam(':balance', $balance);
            $stmt->execute();  
-            
+           $this->conn = null;
             return 200;
-            $this->conn = null;
+            
               
             }
 
@@ -140,15 +120,15 @@ class Student_Record extends DatabaseConnection{
             (SELECT `section_name` from tbl_section where section_id = @Sid) as section_name,
             (SELECT `schedule_id` from tbl_section where section_id = @Sid) as schedule_id
              FROM tbl_enrollment order by date desc ) 
-             tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id group by tbl_student_info.student_id
+             tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id 
              
              ";
             $stmt = $this->conn->prepare($student_record);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            return $data;
             $this->conn = null;
+            return $data;
+          
 
 
         }
@@ -165,15 +145,15 @@ class Student_Record extends DatabaseConnection{
             (SELECT `section_name` from tbl_section where section_id = @Sid) as section_name,
             (SELECT `schedule_id` from tbl_section where section_id = @Sid) as schedule_id
              FROM tbl_enrollment ) 
-             tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id group by tbl_student_info.student_id
+             tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id
              ";
             $stmt = $this->conn->prepare($student_search);
             $stmt->bindParam(':searchTerm', $searchTerm);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            return $data;
             $this->conn = null;
+            return $data;
+      
             
         }
 
@@ -188,7 +168,6 @@ class Student_Record extends DatabaseConnection{
             (SELECT `schedule_id` from tbl_section where section_id = @Sid) as schedule_id
              FROM tbl_enrollment WHERE Year = :year AND Section = :section AND Sem = :semester ) 
              tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id 
-             group by tbl_student_info.student_id
              ";
             $stmt = $this->conn->prepare($student_search);
             $stmt->bindParam(':course',$course);
@@ -197,9 +176,9 @@ class Student_Record extends DatabaseConnection{
             $stmt->bindParam(':semester',$semester);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            return $data;
             $this->conn = null;
+            return $data;
+        
             
         }
 
@@ -229,9 +208,9 @@ class Student_Record extends DatabaseConnection{
             $stmt->bindParam(':id', $id);
             $stmt->execute();
 
-
-            return 200;
             $this->conn = null;
+            return 200;
+         
 
 
 
@@ -331,9 +310,10 @@ class Student_Record extends DatabaseConnection{
             $stmt1->bindParam(':year', $year);
             $stmt1->bindParam(':section', $section);
             $stmt1->bindParam(':semester', $semester);
-            $stmt1->execute();  
-            return 200;
+            $stmt1->execute();
             $this->conn = null;
+            return 200;
+            
 
 
         }
@@ -348,9 +328,9 @@ class Student_Record extends DatabaseConnection{
             $stmt = $this->conn->prepare($student_record);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            return $data;
             $this->conn = null;
+            return $data;
+            
 
 
         }
@@ -364,9 +344,9 @@ class Student_Record extends DatabaseConnection{
             $stmt = $this->conn->prepare($student_record);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            return $data;
             $this->conn = null;
+            return $data;
+            
 
 
         }
@@ -379,15 +359,15 @@ class Student_Record extends DatabaseConnection{
             (SELECT `section_name` from tbl_section where section_id = @Sid) as section_name,
             (SELECT `schedule_id` from tbl_section where section_id = @Sid) as schedule_id
              FROM tbl_enrollment order by date desc ) 
-             tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id group by tbl_student_info.student_id
+             tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id
              
              ";
             $stmt = $this->conn->prepare($student_record);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            return $data;
             $this->conn = null;
+            return $data;
+          
 
 
         }
@@ -417,9 +397,9 @@ class Student_Record extends DatabaseConnection{
             $stmt1 = $this->conn->prepare($update_cor_status);
             $stmt1->bindParam(':id_enroll',$id_enroll);
             $stmt1->execute(); 
-
-            return $data;
             $this->conn = null;
+            return $data;
+           
 
 
               
@@ -437,5 +417,3 @@ class Student_Record extends DatabaseConnection{
 
 
 
-
-?>
