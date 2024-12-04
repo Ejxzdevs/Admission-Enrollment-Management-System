@@ -12,7 +12,7 @@
         </div>
         <div class="header-content">
             <div class="header">
-                <p>header</p>
+    
             </div>
             <div class="content">
                 <p>content</p>
