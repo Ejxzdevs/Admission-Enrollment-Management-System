@@ -5,7 +5,7 @@ class DatabaseConnection {
     private $dbname = "enrollment_system";
     private $username = "root";
     private $password = "";
-    protected $conn;
+    public $conn;
 
     public function __construct() {
         try {
@@ -17,4 +17,3 @@ class DatabaseConnection {
     }
 }
 
-?>

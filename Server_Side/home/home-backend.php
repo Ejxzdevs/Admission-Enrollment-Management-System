@@ -11,9 +11,9 @@ class Count extends DatabaseConnection{
         $stmt->execute(); 
         $data = $stmt->rowCount();
         
-        
-        return $data;
         $this->conn = null;
+        return $data;
+        
           
     }
 
@@ -26,9 +26,9 @@ class Count extends DatabaseConnection{
         $stmt->execute(); 
         $data = $stmt->rowCount();
         
-        
-        return $data;
         $this->conn = null;
+        return $data;
+      
           
     }
 
@@ -39,9 +39,9 @@ class Count extends DatabaseConnection{
         $stmt->execute(); 
         $data = $stmt->rowCount();
         
-        
-        return $data;
         $this->conn = null;
+        return $data;
+       
           
     }
 
@@ -52,9 +52,9 @@ class Count extends DatabaseConnection{
         $stmt->execute(); 
         $data = $stmt->rowCount();
         
-        
-        return $data;
         $this->conn = null;
+        return $data;
+    
           
     }
 

@@ -28,7 +28,7 @@ class Schedule extends DatabaseConnection{
         }
 
         return 200 ;
-        $this->conn = null;
+       
           
     }
 
@@ -40,7 +40,7 @@ class Schedule extends DatabaseConnection{
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         return $data;
-        $this->conn = null;
+        
           
     }
 
@@ -52,7 +52,7 @@ class Schedule extends DatabaseConnection{
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         return $data;
-        $this->conn = null;
+        
           
     }
 
@@ -66,7 +66,7 @@ class Schedule extends DatabaseConnection{
         $stmt->execute(); 
 
         return 200;
-        $this->conn = null;
+        
           
     }
 
@@ -84,7 +84,7 @@ class Schedule extends DatabaseConnection{
         $stmt2->execute(); 
 
         return 200;
-        $this->conn = null;
+        
           
     }
 
@@ -109,7 +109,7 @@ class Schedule extends DatabaseConnection{
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         return $data;
-        $this->conn = null;
+        
           
     }
 
@@ -126,7 +126,7 @@ class Schedule extends DatabaseConnection{
         $stmt->execute(); 
         
         return 200;
-        $this->conn = null;
+        
 
 
 
@@ -145,6 +145,3 @@ class Schedule extends DatabaseConnection{
 
 
 
-
-
-?>
