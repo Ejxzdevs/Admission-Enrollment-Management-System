@@ -114,21 +114,32 @@ $result_list  = $public_list ->Show_Public();
 
 
 ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for=""><a href="#" onclick="open_messages()">Create Post</a>
-   
+            <label for="">Public Notices</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
-                    <label for="">Public Notices</label>
+                    <label for="">
+                        <a 
+                        style="
+                            background-color: #0879BB;
+                            text-decoration: none;
+                            color:#FFFFFF;
+                            padding: .8em 2em;
+                            border-radius: 5px;
+                            font-size: 13px;
+                            "
+                        href="#" onclick="open_messages()">Create Post</a>
                 </div> 
                 <form action="inquiry.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Title: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <button type="submit" name="src-submit">
+                        <i class="bi bi-search"></i>
+                    </button>
                 </form>
             </div>
             <div class="admission-content-body">
@@ -155,8 +166,8 @@ $result_list  = $public_list ->Show_Public();
                                 '<?php echo $data['public_img']; ?>',
                                 '<?php echo $data['title']; ?>',
                                 '<?php echo $data['public_content']; ?>')">
-                                <img class="act-icons" src="../../Icons/edit.png" alt="" srcset=""></a>
-                                <a href="public.php?post_id=<?php echo $data['public_id']; ?>"><img class="act-icons" src="../../Icons/delete.png" alt="" srcset=""></a>
+                                <img style="height: 1.3rem;" src="../../Icons/edit.png" alt="" srcset=""></a>
+                                <a href="public.php?post_id=<?php echo $data['public_id']; ?>"><img style="height: 1.3rem;" src="../../Icons/delete.png" alt="" srcset=""></a>
                             </td>
                         </tr>
                     </tbody>
@@ -171,10 +182,17 @@ $result_list  = $public_list ->Show_Public();
 <div class="modal">
     <div class="modal-container">
         <div class="modal-header">
-            <label for="">NEW POST</label>
             <a href="javascript: close_message()"><img src="../../Icons/close.png" ></a>
         </div>
         <div class="modal-body">
+        <div>
+        <label 
+            style='
+            font-size: 25px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            '>Create a Public Notice</label> 
+        </div>
             <div class="public-content">
                     <form action="public.php" method="post" enctype="multipart/form-data">
                         <div class="pub-image" id="imageContainer">      
@@ -201,10 +219,18 @@ $result_list  = $public_list ->Show_Public();
 <div class="modal" id="update">
     <div class="modal-container">
         <div class="modal-header">
-            <label for="">NEW POST</label>
             <a href="javascript: close_update()"><img src="../../Icons/close.png" ></a>
         </div>
         <div class="modal-body">
+            <div>
+                <label 
+                style='
+                font-size: 25px;
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: bold;
+                '>Update this Post
+                </label> 
+            </div>
             <div class="public-content">
                     <form action="public.php" method="post" enctype="multipart/form-data">
                         <div class="pub-image" id="updateContainer">
