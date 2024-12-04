@@ -52,21 +52,31 @@ $show_section = new Report();
 $result_section = $show_section->Show_Section();
 
 ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for=""><a href="#" onclick="open_report()">Generate Reports</a>
-   
+            <label for="">Reports</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
-                    <label for="">Reports</label>
+                    <label><a 
+                    style="
+                            background-color: #0879BB;
+                            text-decoration: none;
+                            color:#FFFFFF;
+                            padding: .8em 2em;
+                            border-radius: 5px;
+                            font-size: 13px;
+                            "
+                    href="#" onclick="open_report()">Generate Reports</a>
                 </div> 
                 <form action="inquiry.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Title: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <button type="submit" name="src-submit">
+                        <i class="bi bi-search"></i>
+                    </button>
                 </form>
             </div>
             <div class="admission-content-body">
