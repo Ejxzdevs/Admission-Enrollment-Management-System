@@ -16,7 +16,7 @@
         </div>
         <div class="header-content">
             <div class="header">
-                <p>Enrollment Management System</p>
+         
             </div>
             <div class="content">
                 <?php include "enrollment-content.php"; ?>

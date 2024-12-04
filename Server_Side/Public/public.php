@@ -13,7 +13,7 @@ if(!isset($_SESSION['id'])){
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../Layout/Layout.css">
-    <title>Enrollment Management System</title>
+
     <link rel="stylesheet" href="../sidebar/sidebar.css">
     <link rel="stylesheet" href="public.css">
     <title>Public Notice</title>
@@ -24,7 +24,7 @@ if(!isset($_SESSION['id'])){
         </div>
         <div class="header-content">
             <div class="header">
-                <p>Enrollment Management System</p>
+         
             </div>
             <div class="content">
                 <?php include "public-content.php"; ?>

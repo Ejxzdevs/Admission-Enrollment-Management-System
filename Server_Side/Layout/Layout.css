@@ -32,13 +32,12 @@ html,body{
     background-color:white;
     display: flex;
     flex-direction: column;
-    
+    background-color: #1686C7;
 }
 .header{
     height: 10%;
     width: 100%;
-    /* background-color: #0879BB; */
-    background-color: #5AA5D1;
+
     display: flex;
     justify-content: center;
     align-items: center;

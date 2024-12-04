@@ -25,7 +25,7 @@ $data = $student_data->Show_Student_details($id,$admission_id);
     <div class="main-container">
         <div class="sub-container">
             <div class="header-student">
-                <label for="">Admission Information</label>
+         
             </div>
             <div class="body-student">
                 <div class="student-info">
