@@ -1,7 +1,7 @@
 <div class="sidebar-container">
-    <div class="sidebar-header">
-        <img id="user-icons" src="../../Icons/admin.png" alt="">
-        <p id="user_email">Admin</p>
+    <div class=" sidebar-header">
+        <img src="../../logo/bestlink-logo.png" alt="bestlink" style="height: 2.5em; " >
+        <h1 style="font-size: 26px; color: black;  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" >BestLink</h1>
     </div>
     <div class="sidebar-content">
         <ul >
