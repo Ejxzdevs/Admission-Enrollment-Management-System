@@ -47,7 +47,6 @@
     flex-direction: row;
 }
 
-
 .admission-content-header > .label-container{
     width: 50%;
     height: 100%;
@@ -109,7 +108,6 @@
 .admission-content-body{
     height: auto;
     width: 100%;
-
     padding: 0 1em 15em 1em;
 }
 /* table design */
