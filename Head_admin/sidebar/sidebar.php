@@ -1,28 +1,11 @@
 <div class="sidebar-container">
     <div class="sidebar-header">
-        <img id="user-icons" src="../../Icons/admin.png" alt="">
-        <p id="user_email">Head Admin</p>
+    <img src="../../logo/bestlink-logo.png" alt="bestlink" style="height: 2.5em; " >
+    <h1 style="font-size: 26px; color: black;  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" >BestLink</h1>
     </div>
     <div class="sidebar-content">
         <ul >
-            <!-- <li><a href=""><img class="nav-icons" src="../../icons/dashboard.png" >Dashboard</a></li> -->
-            <!-- <li><a href="#" id="transaction"><img class="nav-icons" src="../../icons/transaction.png" >Admission<img class="right-arrow" src="../../icons/right-arrow.svg" ></a>
-                <ul  class="sub-transaction" id="sub-transaction">
-                    <li style="border: none;"><a href="../Admission/admission.php">Pending</a></li>
-                    <li style="border: none;"><a href="../Admission/accepted.php">Accepted</a></li>
-                    <li style="border: none;"><a href="../Admission/rejected.php">Rejected</a></li>
-                    
-                </ul>
-            </li> -->
-            <!-- <li><a href="#" id="Maintinance"><img id="sub-transaction-img" class="nav-icons" src="../../icons/transaction.png" >Maintinance<img class="right-arrow " id="arr-maintinance"  src="../../icons/right-arrow.svg" ></a>
-                <ul  class="sub-transaction" id="sub-maintinance">
-              
-                    <li style="border: none;"><a href="../Course/course.php">Course</a></li>
-                    <li style="border: none;"><a href="../Subject/subject.php">Subject</a></li>
-                    <li style="border: none;"><a href="../Admission/rejected.php">Schedule</a></li>
-                </ul>
-            </li> -->
-            
+            <li><a href="../home/home.php"><img class="nav-icons" src="../../icons/dashboard.png" >Dashboard</a></li>
             <li><a href="../Schedule/schedule.php"><img class="nav-icons" src="../../Icons/conversation.png" >Schedule</a></li>
             <li><a href="../Section/section.php"><img class="nav-icons" src="../../Icons/skills.png" >Section</a></li>
             <li><a href="../Course/course.php"><img class="nav-icons" src="../../Icons/copy-writing.png" >Course</a></li>
