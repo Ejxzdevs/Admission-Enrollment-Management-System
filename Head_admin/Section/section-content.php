@@ -159,10 +159,17 @@ if(isset($_GET['delete'])){
 <div class="modal">
     <div class="modal-container"> 
         <div class="header-course">
-            <label for="">Add Section</label>
              <a href="javascript: close_course()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course">
+        <div style=" padding: 1rem 0 0 0 ; display: flex; justify-content: center; align-items: end; " >
+                        <label 
+                        style='
+                        font-size: 16px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        '>Create a Section</label>
+                        </div>
             <form action="section.php" method="POST">
                     <input type="text" name="section-name" placeholder="Section Name: ">
                     <input type="text" name="room" placeholder="Room: ">
@@ -182,10 +189,17 @@ if(isset($_GET['delete'])){
 <div class="modal" id="update-section">
     <div class="modal-container"> 
         <div class="header-course">
-            <label for="">Add Section</label>
              <a href="javascript: close_section_update()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course">
+        <div style=" padding: 1rem 0 0 0 ; display: flex; justify-content: center; align-items: end; " >
+                        <label 
+                        style='
+                        font-size: 16px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        '>Update Section</label>
+                        </div>
             <form action="section.php" method="POST">
                     <input type="text" name="section-name" placeholder="Section Name: " id="sec-name">
                     <input type="text" name="room" placeholder="Room: " id="room">
