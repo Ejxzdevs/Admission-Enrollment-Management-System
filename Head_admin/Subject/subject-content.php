@@ -1,10 +1,18 @@
 <?php 
 include "subject_backend.php";
 
-$subject_list = new Subject();
-$result_list  = $subject_list->Show_Subject();
+if(isset($_POST['src-submit'])){
+    // FILTER SEARCH SPECIFIC SUBJECT
+    $name = $_POST['search_name'];
+    $subject_list = new Subject();
+    $result_list  = $subject_list->Search_Subject($name);
+}else{
+    // DEFAULT SHOW ALL SUBJECT
+    $subject_list = new Subject();
+    $result_list  = $subject_list->Show_Subject();
+}
 
-// Insert Subject
+// INSERT SUBJECT
 if(isset($_POST['submit-subject'])){
 
     $subject = new Subject();
@@ -12,7 +20,6 @@ if(isset($_POST['submit-subject'])){
     $sub_unit = $_POST['sub-unit'];
     $sub_code = $_POST['sub-code'];
     $sub_description = $_POST['sub-description'];
-
     $res_subject_insert = $subject->Insert_Subject($sub_name,$sub_unit,$sub_code,$sub_description);
     
     if($res_subject_insert == 200){
@@ -30,7 +37,7 @@ if(isset($_POST['submit-subject'])){
     }
 }
 
-// update subject
+// UPDATE SUBJECT
 if(isset($_POST['update-subject'])){
 
     $subject_update = new Subject();
@@ -57,6 +64,7 @@ if(isset($_POST['update-subject'])){
     }
 }
 
+// DELETE SUBJECT
 if(isset($_GET['subject_id'])){
 
     $id = $_GET['subject_id'];
@@ -99,7 +107,7 @@ if(isset($_GET['subject_id'])){
                             "
                     href="#" onclick="open_course()">New Subject</a>  
                 </div> 
-                <form action="inquiry.php" method="POST">
+                <form action="subject.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Subject: ">
                     <button type="submit" name="src-submit"><i class="bi bi-search"></i></button>
                 </form>
