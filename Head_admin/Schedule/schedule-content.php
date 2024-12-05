@@ -10,9 +10,14 @@ $result_subject  = $select_subject->Show_Subject();
 
 
 // select schedule
-
-$select_schedule = new Schedule();
-$result_schedule  = $select_schedule->Show_Schedule();
+if(isset($_POST['src-submit'])){
+    $name = $_POST['search_name'];
+    $select_schedule = new Schedule();
+    $result_schedule  = $select_schedule->Search_Schedule($name);
+}else{
+    $select_schedule = new Schedule();
+    $result_schedule  = $select_schedule->Show_Schedule();
+}
 
 
 if(isset($_POST['new-sched-set'])){
@@ -87,10 +92,9 @@ if(isset($_GET['id'])){
                             border-radius: 5px;
                             font-size: 13px;
                             "
-                    
                     href="#" onclick="open_course()">New Schedule</a>  
                 </div> 
-                <form action="inquiry.php" method="POST">
+                <form action="schedule.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Schedule: ">
                     <button type="submit" name="src-submit"><i class="bi bi-search"></i></button>
                 </form>
@@ -128,17 +132,33 @@ if(isset($_GET['id'])){
 <div class="modal" id="modal-create">
     <div class="modal-container" id="create-container"> 
         <div class="header-course" id="head-schedule">
-            <label for="">Set New Schedule</label>
              <a href="javascript: close_course()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-schedule">
             <form action="schedule.php" method="POST" >
                 <div class="sched-set" id="form-sched">
+                    <div style="padding: 1.5rem 1.8rem;" >
+                        <label 
+                        style='
+                        font-size: 22px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        padding: 5rem 0;
+                        '>Create a Schedule</label>
+                        </div>
                     <div class="schedule_name">
                         <input type="text" name="schedule_name"  placeholder="Schedule Name: ">
                     </div>
                     <div class="sched-input">
-                        <input type="text" name="day[]" placeholder="Day: ">
+                        <select name="day[]" id="">
+                            <option value="" disabled selected>Select Day</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                        </select>
+
                         <select name="subject[]" style="width:200px;">
                             <option >Select Option</option>
                             <option value="Lunch Break">Lunch Break</option>
@@ -152,8 +172,8 @@ if(isset($_GET['id'])){
                     </div>
                 </div>
                 <div class="btn-req-div">
-                    <button type="submit" name="new-sched-set">SUBMIT</button>
-                    <a href="javascript: add_row();">ADD NEW </a>
+                    <button type="submit" name="new-sched-set">Create</button>
+                    <a href="javascript: add_row();">New Row</a>
                 </div>
             </form>
         </div>
@@ -206,7 +226,14 @@ if(isset($_GET['id'])){
     let container = document.createElement("div");
     container.className = "sched-input";
     container.innerHTML = ` 
-                        <input type="text" name="day[]" placeholder="Day: ">  
+                         <select name="day[]" id="">
+                            <option value="" disabled selected>Select Day</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                        </select>  
                         <select name="subject[]" style="width:200px;">
                             <option >Select Option</option>
                             <option value="Lunch Break">Lunch Break</option>
