@@ -3,6 +3,20 @@ include "course_backend.php";
 
 error_reporting(0);
 
+
+if(isset($_POST['src-submit'])){
+    // SEARCH SPECIFIC COURSE
+    $name = $_POST['search_name'];
+    $select_course = new Course();
+    $result_list  = $select_course->Search_Course(  $name);
+}else{
+    // DEFAULT SELECT ALL COURSE
+    $select_course = new Course();
+    $result_list  = $select_course->Show_Course();
+}
+
+
+// INSERT COURSE
 if(isset($_POST['submit-course'])){
 
     $course = new Course();
@@ -26,8 +40,7 @@ if(isset($_POST['submit-course'])){
     }
 }
 
-// update course
-
+// UPDATE COURSE
 if(isset($_POST['update-course'])){
 
     $update_course = new Course();
@@ -53,14 +66,7 @@ if(isset($_POST['update-course'])){
     }
 }
 
-
-// select course
-
-$select_course = new Course();
-$result_list  = $select_course->Show_Course();
-
-// delete course
-
+// DELETE COURSE
 if(isset($_GET['course_id'])){
 
     $id = $_GET['course_id'];
@@ -81,7 +87,6 @@ if(isset($_GET['course_id'])){
         </script>";
     }
 }
-
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
@@ -103,7 +108,7 @@ if(isset($_GET['course_id'])){
                             "
                     href="#" onclick="open_course()">New Course</a>
                 </div> 
-                <form action="inquiry.php" method="POST">
+                <form action="course.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Course: ">
                     <button type="submit" name="src-submit"><i class="bi bi-search"></i></button>
                 </form>
