@@ -83,21 +83,29 @@ if(isset($_GET['course_id'])){
 }
 
 ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for=""><a href="#" onclick="open_course()">New Course</a>
-   
+            <label for="">List of Courses</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
-                    <label for="">List of Courses</label>
+                    <label for=""><a 
+                    style="
+                            background-color: #0879BB;
+                            text-decoration: none;
+                            color:#FFFFFF;
+                            padding: .8em 2em;
+                            border-radius: 5px;
+                            font-size: 13px;
+                            "
+                    href="#" onclick="open_course()">New Course</a>
                 </div> 
                 <form action="inquiry.php" method="POST">
-                    <input type="text" name="search_name" placeholder="Search Name: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <input type="text" name="search_name" placeholder="Search Course: ">
+                    <button type="submit" name="src-submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
             <div class="admission-content-body">
@@ -137,10 +145,17 @@ if(isset($_GET['course_id'])){
 <div class="modal">
     <div class="modal-container"> 
         <div class="header-course">
-            <label for="">New Course</label>
              <a href="javascript: close_course()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course">
+        <div style="padding: 1rem 0 0 1rem;" >
+                        <label 
+                        style='
+                        font-size: 22px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        '>Create a Course</label>
+                        </div>
             <form action="course.php" method="POST">
                 <input type="text" name="course-title" placeholder="Course Name:">
                 <textarea name="course-description" id="" cols="30" rows="10" placeholder="Description: "></textarea>
@@ -154,10 +169,17 @@ if(isset($_GET['course_id'])){
 <div class="modal" id="update-course">
     <div class="modal-container"> 
         <div class="header-course">
-            <label for="">Update Course</label>
              <a href="javascript: close_course_update()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course">
+            <div style="padding: 1rem 0 0 1rem;" >
+                        <label 
+                        style='
+                        font-size: 22px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        '>Update Course</label>
+                </div>
             <form action="course.php" method="POST">
                 <input type="text" name="course-id" placeholder="Course Name:" id="course_id" hidden>
                 <input type="text" name="course-name" placeholder="Course Name:" id="course_name">
