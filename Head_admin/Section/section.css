@@ -7,7 +7,8 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    padding: 1em 1em 0 3em;
+    padding: 1em 1em 0 1em;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .sub-admission-container{
@@ -18,7 +19,6 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    padding: 1em 1em 0 1em;
     
 }
 
@@ -32,16 +32,11 @@
 }
 
 .admission-header label{
-    font-size: 1.6em;
-    color: #8C999F;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 1px;
-    box-shadow: 0 5px 16px 0 rgba(68, 88, 144, 0.14);
+    font-size: 1.2em;
 }
 .admission-content{
     margin: 1em 0 0 0;
     background-color: #F3F8FA;
-    box-shadow: 0 5px 16px 0 rgba(68, 88, 144, 0.14);
     border: solid 1px #F3F8FA ;
     height: auto;
     width: 100%;
@@ -51,9 +46,6 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-   
-
-    /* background-color: aqua; */
 }
 
 
@@ -73,26 +65,25 @@
     width: 50%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     flex-direction: row;
-    gap: .5em;
+    padding-right: 1em;
 }
 
 .admission-content-header > form > input{
     height: 2.5em;
     width: 20em;
-    border: solid 1px #95A5A6;
     padding-left: 1em;
 }
 
 .admission-content-header > form > button{
     height: 2.5em;
-    width: 10em;
+    padding: 10px;
     font-size: 1.2e;
-    letter-spacing: 1px;
     color: white;
-    background-color: #95A5A6;
+    background-color: #0879BB;
+    border: none;
 }
 
 
@@ -101,27 +92,24 @@
     font-weight: 600;
     color: #8C999F;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-    
 }
 
 .admission-content-body{
     height: auto;
     width: 100%;
-
     padding: 0 1em 15em 1em;
 }
 /* table design */
-.admission-content-body table{
+.admission-content-body table , #table{ 
     position: relative;
 	width: 100%;
 	border-collapse: collapse;
  
 }
 
-.admission-content-body table thead tr{
-	background-color: #95A5A6;
- 	font-size: 1em;
+.admission-content-body table thead tr {
+	background-color: #0879BB;
+ 	font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
  	letter-spacing: 1px;
 	color: white;
@@ -129,9 +117,23 @@
 
 }
 
+#table > #td-head tr {
+	bposition: relative;
+	text-align: center;
+	color: #2e2e1f;
+	cursor: pointer;
+	border-bottom: solid .5px grey;
+}
+
+#table > #td-head th{
+    width: 200px;
+
+    
+    
+}
 .admission-content-body table thead th{
 	width: 200px;
-	height: 2.8em;;
+	height: 3em;;
 }
 
 
@@ -153,10 +155,8 @@
 }
 
 .admission-content-body tbody tr td{
-	padding: 1em 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
-
+	height: 40px;
+    font-size: 14px;
 }
 
 .admission-content-body tr tbody tr:nth-child(even)
@@ -167,14 +167,12 @@
 .admission-content-body tbody > tr > td > a{
     margin: 0 .4em;
 }
-.action-icons{
-    height: 2em;
- 
-}
 
-.cross{
-    height: 1.4em;
-    margin: 0 0 .3em 0;
+.admission-content-body tbody > tr > td > p {
+    font-size: 12px;
+}
+.act-icons{
+    height: 1.3em;
 }
 
 /* FOR MODAL */
