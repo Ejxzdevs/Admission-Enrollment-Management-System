@@ -16,8 +16,6 @@ if(isset($_POST['submit-section'])){
     $insert_section = new Section();
     $insert_result = $insert_section->Insert_Section($name,$sched,$room);
 
-  
-       
     if($insert_result == 200){
         echo "
         <script>
@@ -35,20 +33,16 @@ if(isset($_POST['submit-section'])){
 }
 
 // update 
-
 if(isset($_POST['update-section'])){
 
     $id = $_POST['id'];
     $name = $_POST['section-name'];
     $sched = $_POST['schedule'];
     $room = $_POST['room'];
-
     
     $update_section = new Section();
     $update_result = $update_section->Update_Section($name,$sched,$id,$room);
 
-  
-       
     if($update_result == 200){
         echo "
         <script>
@@ -79,7 +73,6 @@ if(isset($_POST['src-submit'])){
 
 
 // delete section
-
 if(isset($_GET['delete'])){
 
     $id = $_GET['delete'];
@@ -104,21 +97,29 @@ if(isset($_GET['delete'])){
 }
 
 ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for=""><a href="#" onclick="open_course()">New Section</a>
-   
+            <label for="">List of Section</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
-                    <label for="">List of Section</label>
+                    <label for=""><a 
+                    style="
+                            background-color: #0879BB;
+                            text-decoration: none;
+                            color:#FFFFFF;
+                            padding: .8em 2em;
+                            border-radius: 5px;
+                            font-size: 13px;
+                            "
+                    href="#" onclick="open_course()">New Section</a>
                 </div> 
                 <form action="section.php" method="POST">
-                    <input type="text" name="search_name" placeholder="Search Name: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <input type="text" name="search_name" placeholder="Search Section: ">
+                    <button type="submit" name="src-submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
             <div class="admission-content-body">
@@ -137,9 +138,9 @@ if(isset($_GET['delete'])){
                     <tbody>
                         <tr>
                             <td><?php echo $section['section_id'] ?></td>
-                            <td><?php echo $section['section_name'] ?></td>
-                            <td><?php echo $section['room'] ?></td>
-                            <td><?php echo $section['schedule_name'] ?></td>
+                            <td><p><?php echo $section['section_name'] ?></p></td>
+                            <td><p><?php echo $section['room'] ?></p></td>
+                            <td><p><?php echo $section['schedule_name'] ?></p></td>
                             <td>                              
                                 <a href="javascript: update_section('<?php echo $section['section_id'] ?>','<?php echo $section['schedule_id'] ?>','<?php echo $section['section_name'] ?>','<?php echo $section['room'] ?>');"><img class="act-icons" src="../../Icons/edit.png" alt="" srcset=""></a>
                                 <a href="section.php?delete=<?php echo $section['section_id'];  ?>"><img class="act-icons" src="../../Icons/delete.png" alt="" srcset=""></a>                     
