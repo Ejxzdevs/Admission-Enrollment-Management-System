@@ -1,8 +1,10 @@
 <?php 
 include "subject_backend.php";
 
+$subject_list = new Subject();
+$result_list  = $subject_list->Show_Subject();
 
-
+// Insert Subject
 if(isset($_POST['submit-subject'])){
 
     $subject = new Subject();
@@ -28,8 +30,7 @@ if(isset($_POST['submit-subject'])){
     }
 }
 
-// update course
-
+// update subject
 if(isset($_POST['update-subject'])){
 
     $subject_update = new Subject();
@@ -56,12 +57,6 @@ if(isset($_POST['update-subject'])){
     }
 }
 
-
-
-$subject_list = new Subject();
-$result_list  = $subject_list->Show_Subject();
-
-
 if(isset($_GET['subject_id'])){
 
     $id = $_GET['subject_id'];
@@ -84,21 +79,29 @@ if(isset($_GET['subject_id'])){
 }
 
 ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
     <div class="sub-admission-container">
         <div class="admission-header">
-            <label for=""><a href="#" onclick="open_course()">New Subject</a>
-   
+            <label for="">List of Subjects</label>
         </div>
         <div class="admission-content">
             <div class="admission-content-header">
                 <div class="label-container">
-                    <label for="">List of Subjects</label>
+                    <label for=""><a 
+                    style="
+                            background-color: #0879BB;
+                            text-decoration: none;
+                            color:#FFFFFF;
+                            padding: .8em 2em;
+                            border-radius: 5px;
+                            font-size: 13px;
+                            "
+                    href="#" onclick="open_course()">New Subject</a>  
                 </div> 
                 <form action="inquiry.php" method="POST">
                     <input type="text" name="search_name" placeholder="Search Subject: ">
-                    <button type="submit" name="src-submit">Filter</button>
+                    <button type="submit" name="src-submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
             <div class="admission-content-body">
@@ -142,14 +145,22 @@ if(isset($_GET['subject_id'])){
         </div> 
     </div> 
 </div>
-<!-- CREATE MODAL -->
+
+<!-- CREATE SUBJECT MODAL -->
 <div class="modal">
     <div class="modal-container"> 
         <div class="header-course">
-            <label for="">New Subject</label>
              <a href="javascript: close_course()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course">
+        <div style=" padding: 1rem 0 0 0 ; display: flex; justify-content: center; align-items: end; " >
+                        <label 
+                        style='
+                        font-size: 16px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        '>Create a Subject</label>
+            </div>
             <form action="subject.php" method="POST">
                 <div class="con-inp-sub">
                     <input type="text" class="sub-name" name="sub-name" placeholder="Subject Name:"> 
@@ -168,15 +179,22 @@ if(isset($_GET['subject_id'])){
         </div>
     </div>
 </div>
-<!-- UPDATE -->
 
+<!-- UPDATE SUBJECT MODAL -->
 <div class="modal" id="update-subject">
     <div class="modal-container"> 
         <div class="header-course">
-            <label for="">Update Subject</label>
              <a href="javascript: close_subject_update()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course">
+             <div style=" padding: 1rem 0 0 0 ; display: flex; justify-content: center; align-items: end; " >
+                        <label 
+                        style='
+                        font-size: 16px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        '>Update Subject</label>
+            </div>
             <form action="subject.php" method="POST">
                 <div class="con-inp-sub">
                     <input type="text" class="sub-name" id="sub-name" name="sub-name" placeholder="Subject Code:">
@@ -200,20 +218,14 @@ if(isset($_GET['subject_id'])){
 
 
 <script>
-    // create
+    // CREATE MODAL
     let openModal = document.querySelector('.modal');
     function open_course(){
-        
         openModal.style.display ="Flex";
-     
     }
-
     function close_course(){
         openModal.style.display ="None";
     } 
-
-
-
 
     let SubjectUpdate = document.querySelector('#update-subject');
     function update_subject(id,name,code,description,unit){
@@ -229,17 +241,11 @@ if(isset($_GET['subject_id'])){
         Scode.value = code;
         Sunit.value = unit;
         Sdescription.value = description;
-        
-        
-       
-     
     }
 
     function close_subject_update(){
         SubjectUpdate.style.display ="None";
     } 
-
-
 </script>
 
 
