@@ -8,7 +8,6 @@ error_reporting(0);
 $select_subject = new Schedule();
 $result_subject  = $select_subject->Show_Subject();
 
-
 // select schedule
 if(isset($_POST['src-submit'])){
     $name = $_POST['search_name'];
@@ -112,7 +111,7 @@ if(isset($_GET['id'])){
                     <tbody>
                         <tr>
                             <td><?php echo $data['schedule_id']; ?></td>
-                            <td><?php echo $data['schedule_name']; ?></td> 
+                            <td><p style="font-size: 12px;" ><?php echo $data['schedule_name']; ?></p></td> 
                             <td>
                                 <!-- <a href="javascript: view_schedule('<?php echo $data['schedule_id']; ?>');"><img class="act-icons" src="../../Icons/show.png" alt="" srcset=""></a> -->
                                 <a href="schedule_view.php?id=<?php echo $data['schedule_id']; ?>&&schedule_name=<?php echo $data['schedule_name']; ?>" target="_blank"><img class="act-icons" src="../../Icons/show.png" alt="" srcset=""></a>
