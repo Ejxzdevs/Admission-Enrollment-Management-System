@@ -25,7 +25,7 @@ if(!isset($_SESSION['id'])){
         </div>
         <div class="header-content">
             <div class="header">
-      
+                <?php require_once "../navbar.php"; ?>
             </div>
             <div class="content">
                 <?php include "requirement-content.php"; ?>
