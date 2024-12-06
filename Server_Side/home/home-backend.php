@@ -58,6 +58,28 @@ class Count extends DatabaseConnection{
           
     }
 
+
+    public function Student_Records(){
+
+        $student_record = "SELECT * FROM (SELECT * FROM tbl_student_info WHERE Student_Type = 'E' ) tbl_student_info
+        INNER JOIN (SELECT enrollment_id,student_id,date,Year,Sem,Remark,
+        @Sid:= Section as Section,
+        (SELECT `section_name` from tbl_section where section_id = @Sid) as section_name,
+        (SELECT `schedule_id` from tbl_section where section_id = @Sid) as schedule_id
+         FROM tbl_enrollment order by date desc ) 
+         tbl_enrollment on tbl_student_info.student_id = tbl_enrollment.student_id 
+        LIMIT 7
+         ";
+        $stmt = $this->conn->prepare($student_record);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $this->conn = null;
+        return $data;
+      
+
+
+    }
+
     
     
 
@@ -65,11 +87,6 @@ class Count extends DatabaseConnection{
 
 }
 
-
-
-
-
-?>
 
 
 
