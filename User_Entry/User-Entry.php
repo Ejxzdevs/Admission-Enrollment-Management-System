@@ -14,7 +14,7 @@ class Login extends DatabaseConnection{
     $_SESSION['id'] = $user['id'];
     $_SESSION['user_type'] = $user['user_type'];
 
-  
+    $this->conn = null;
     if($user['status'] == 'Enable'){
         return 200;
     }
@@ -24,15 +24,5 @@ class Login extends DatabaseConnection{
         return 404;
     }
 
-$this->conn = null;
-      
     }
 }
-
-
-
-
-
-
-
-?>
