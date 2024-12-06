@@ -34,4 +34,4 @@ The Admission and Enrollment System enhances efficiency, reduces administrative 
  - Frontend: HTML, CSS, Bootstrap,
  - Backend: PHP
  - Database: MySQL
- - Libray: AOS, Jquery
+ - Libraries: AOS, Jquery
