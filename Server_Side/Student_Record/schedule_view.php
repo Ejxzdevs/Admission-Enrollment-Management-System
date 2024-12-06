@@ -4,7 +4,7 @@ include "view_schedule.php";
 if(isset($_GET['id'])){
 
     $id = $_GET['id'];
-    $name = $_GET['name'];
+    $name = $_GET['fname'] . " " . $_GET['lname'];
     $select_schedule = new Schedule();
     $result_schedule  = $select_schedule->View_Schedule($id);
 
@@ -21,7 +21,7 @@ if(isset($_GET['id'])){
 </head>
 <body>
     <div class="sched-label">
-        <label ><?php echo $name; ?> Schedule </label>
+        <label>Name: <?php echo $name; ?></label>
     </div>
     <div class="table-container">
     <table>
