@@ -28,11 +28,11 @@ $data = $student_data->Show_Student_details($id,$admission_id);
          
             </div>
             <div class="body-student">
+                <br>
                 <div class="student-info">
                     <label>Student Informations</label>
                 </div>
                 <div class="info">
-
                     <div class="stud-info">
                         <label for="">Admission type</label>
                         <p><?php echo $data['admissionType']; ?></p>
@@ -49,11 +49,9 @@ $data = $student_data->Show_Student_details($id,$admission_id);
                         <label for=""></label>
                         <p></p>
                     </div>
-
                 </div>
 
                 <div class="info">
-
                     <div class="stud-info">
                         <label for="">Last Name</label>
                         <p><?php echo $data['lastName']; ?></p>
@@ -70,12 +68,9 @@ $data = $student_data->Show_Student_details($id,$admission_id);
                         <label for="">Suffix</label>
                         <p><?php echo $data['Suffix']; ?></p>
                     </div>
-                 
-
                 </div>
 
                 <div class="info">
-
                     <div class="stud-info">
                         <label for="">Birth of Date</label>
                         <p><?php echo date('m d Y',strtotime($data['Bod'])); ?></p>
@@ -88,12 +83,13 @@ $data = $student_data->Show_Student_details($id,$admission_id);
                         <label for="">Gender</label>
                         <p><?php echo $data['gender']; ?></p>
                     </div>
-                  
-
+                    <div class="stud-info">
+                        <label for=""></label>
+                        <p></p>
+                    </div>
                 </div>
 
                 <div class="info">
-
                     <div class="stud-info">
                         <label for="">Email</label>
                         <p><?php echo $data['email']; ?></p>
@@ -103,10 +99,8 @@ $data = $student_data->Show_Student_details($id,$admission_id);
                         <p><?php echo $data['number']; ?></p>
                     </div>
                    
-
                 </div>
                 <div class="info">
-
                     <div class="stud-info">
                         <label for="">Address </label>
                         <p><?php echo $data['street'] . " " . $data['city'] . " " . $data['province'] . " " . $data['country'] . " " . $data['zipCode'];  ?></p>
@@ -114,10 +108,8 @@ $data = $student_data->Show_Student_details($id,$admission_id);
                     <div class="stud-info">
                         
                     </div>
-                  
-
                 </div>
-                <br>
+                
                 <div class="student-info">
                     <label>Parent Informations</label>
                 </div>
