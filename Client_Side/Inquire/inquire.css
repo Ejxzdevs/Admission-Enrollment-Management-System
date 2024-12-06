@@ -16,9 +16,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
- 
-   
 }
 .bg-courses label{
     font-size: 3em;
@@ -43,47 +40,55 @@
 .inquire-container{
     height: 90%;
     width: 90%;
-
     margin-top: 8em;
     display: flex;
     flex-direction: row;
+    gap: 5rem;
+    
 }
 
 .inquire-contact{
-    height: 100%;
+    height: 50%;
     width: 40%;
-    
-    padding: 1em;
+    border-radius: 5px;
+    margin-left: 4rem;
 }
 
 .sub-inquire-contact{
     height: 100%;
     width: 100%;
-    border: solid 2px darkgrey;
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
 }
 
 .box-contact{
     height: 33.33%;
     width: 100%;
-    border-bottom: solid 2px darkgrey;
-    padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: solid 1px #3C6E8B;
+    border-radius: 5px;
+    padding: 1rem;
 }
 
 .box-contact label{
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.box-contact p {
+    font-size: 12px;
 }
 
 .inquire-data{
     height: 100%;
     width: 60%;
-
-  
     
 }
 
@@ -94,32 +99,32 @@
     flex-direction: column;
 }
 .inquire-data form .box-data{
-    height: 5em;
+    height: 3em;
     width: 100%;
-    
     display: flex;
-    align-items: center;
     gap: 1em;
+   
 }
 
 .inquire-data form .box-data-message{
-    height: 15em;
-    width: 100%;
-   
+    height: 7em;
+    width: 28.3em;
     display: flex;
-    padding: 2em 1.5em;
+    margin-left: 22px;
 
 
 }
 
 .inquire-data form .box-data-message textarea{
     height: 100%;
-    width: 42.5em;
-    border: solid 2px darkgrey;
+    width: 100%;
+    border: solid 1px #3C6E8B;
     background: transparent;
     outline: none;
     border-radius: 5px;
-    padding: .5em 1em;
+    padding: .5em .5em;
+    font-size: 14px;
+    
 }
 .inquire-data form .box-data-message textarea:hover{
     border: solid 1px crimson;
@@ -131,12 +136,14 @@
 
 .inquire-data form .box-data > input{
     height: 2.5em;
-    width: 20em;
-    border: solid 2px darkgrey;
+    width: 15em;
+    border: solid 1px #3C6E8B;
     background: transparent;
     border-radius: 5px;
     margin-left: 1.3em;
     padding-left: .5em;
+    outline: none;
+    font-size: 14px;
 }
 
 .inquire-data form .box-data > input::placeholder{
@@ -149,8 +156,8 @@
 
 .inquire-data form .box-data > .phone{
     height: 2.5em;
-    width: 42.5em;
-    border: solid 2px darkgrey;
+    width: 32.5em;
+    border: solid 1px #3C6E8B;
     background: transparent;
     border-radius: 5px;
     margin-left: 1.3em;
@@ -161,19 +168,21 @@
 
 .btn-inquire{
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding-left: 9rem;
 }
 
 .btn-inquire button{
     height: 2.5em;
-    width: 15em;
+    width: 12em;
     border-radius: 5px;
-    background-color: #5AA5D1;
-    letter-spacing: 1px;
-    font-size: 1.2em;
+    background-color: #0879BB;
+    font-size: 16px;
     color: white;
     font-weight: bold;
+    outline: none;
+    border: none;
+    margin-top: 2rem;
 }
 
 .btn-inquire button:hover{
