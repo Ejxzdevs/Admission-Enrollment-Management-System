@@ -5,8 +5,9 @@
 }
 
 html,body{
-    height: 100%;
+    height: 120vh;
     width: 100%;
+    overflow: hidden;
    
 }
 
@@ -16,34 +17,52 @@ html,body{
     background-color: #DADBDF;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
 }
 
+/* Dashboard Container */
 
+.Dashboard-Label{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+.Dashboard-Label label{
+    font-family: 'Arial';
+    font-size: 32px;
+    font-weight: 600;
+}
+     
+/* total design */
 .count-items{
-    height: 15em;
+    height: 160px;
     width: 100%;
-    /* border: solid 1px black; */
     display: flex;
     flex-direction: row;
-    padding: 2em 1em ;
+    padding: 0em 1em ;
     gap: 1.5em;
 }
 
 .count-data {
-    height: 10em;
+    height: 8em;
     width: 15em;
-    border: solid 1px black;
+    border: solid 1px #3C6E8B;
     display: flex;
-    justify-content: center;
-    padding-left: 2em;
-    flex-direction: column;
+    flex-direction: row;
     gap: .8em;
-    border: 1px solid #fff;
     background: #fff;
     box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.14);
     text-decoration: none;
+    border-radius: 5px;
+}
 
+.iconContainer{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
 }
 
 .icons{
@@ -51,125 +70,96 @@ html,body{
     width: 3em;
 }
 
+.count-data p{
+    font-size: 13px;
+    font-family: 'Arial';
+    color: black;
+}
+
 .count-data label{
+    height: 100%;
+    width: 40%;
     font-weight: bold;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: black;
+    font-size: 40px;
+    padding-bottom: 1.8rem;
+} 
 
+
+
+/*  */
+.ThirdContainer{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    padding-left:1rem;
 }
 
-.count-data p{
-    font-size: 1em;
-    color: darkgrey;
-}
-
-.sum-payment{
-    height: 20em;
-    width: 100%;
-    /* background-color: green ; */
-    /* border: solid 1px black; */
-    padding: 0 1em;
-    
-}
-
-.table-payment{
-    height: 100%;
-    width: 97.5%;
-    border: 1px solid #fff;
-    background: #fff;
-    box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.14);
+.recentStundentContainer {
+    height: 270px;
+    width: 98%;
+    padding: 0 10px;
+    gap: 2px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-
-}
-
-.payment-title{
-    height: 10%;
-    width: 100%;
-    /* background-color: yellow; */
-    border: 1px solid #fff;
-    background: #fff;
     box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.14);
-    padding: .5em .5em;
+    border: solid 1px #3C6E8B;
+    border-radius: 5px;
+    background: #fff;
 }
 
-.payment-title label{
-    font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 600;
-    font-size: .8em;
+.recentStundentContainer label {
+    padding: 5px 0 ;
+    font-family: 'Arial';
+    font-weight: 500;
+    font-size: 16px;
 }
 
-.payment-bodys{
-    height: 90%;
-    width: 100%;
-    /* background-color: blue; */
-}
+table{
 
-
-/* table */
-
- table{
     position: relative;
 	width: 100%;
 	border-collapse: collapse;
- 
 }
 
- table thead tr{
-	background-color: #4796BD;
- 	font-size: 1em;
+table thead tr{
+	background-color: #0879BB;
+ 	font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
- 	letter-spacing: 1px;
 	color: white;
 	font-weight: 600;
-
 }
 
- table thead th{
+table thead th{
 	width: 200px;
-	height: 2em;;
+	height: 1.8em;;
 }
 
-
-
- table tbody tr {
+table tbody tr {
 	position: relative;
 	text-align: center;
-	color: #2e2e1f;
 	cursor: pointer;
-
-
 }
 
- tbody tr:hover{
+tbody tr:hover{
 	transform: scale(1.001);
 	text-align: center;
 	box-shadow: 2px 4px 2px rgba(30, 30, 30, .5), 2px 2px 4px rgba(0, 0, 0, .5);
-
 }
 
- tbody tr td{
-	padding: .4em 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
-
+table tbody tr td p{
+    line-height: 2em;
+ 	font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: 400;
+    border-bottom: solid 1px #3C6E8B;
 }
 
- tr tbody tr:nth-child(even)
+tr tbody tr:nth-child(even)
 {
 	background-color: #c2c2a3;
-}
-
- tbody > tr > td > a{
-    margin: 0 .4em;
-}
-
-/* report */
-
-.report-container{
-    height: 50%;
-    width: 50%;
-    background-color: white;
 }
