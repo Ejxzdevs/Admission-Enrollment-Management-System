@@ -161,10 +161,10 @@ if(isset($_GET['subject_id'])){
              <a href="javascript: close_course()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course">
-        <div style=" padding: 1rem 0 0 0 ; display: flex; justify-content: center; align-items: end; " >
+        <div style="padding: 1rem 0 0 2rem ; display: flex; justify-content: start; align-items: end; " >
                         <label 
                         style='
-                        font-size: 16px;
+                        font-size: 22px;
                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
                         font-weight: bold;
                         '>Create a Subject</label>
@@ -195,10 +195,10 @@ if(isset($_GET['subject_id'])){
              <a href="javascript: close_subject_update()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-course">
-             <div style=" padding: 1rem 0 0 0 ; display: flex; justify-content: center; align-items: end; " >
+             <div style=" padding: 1rem 0 0 2rem ; display: flex; justify-content: start; align-items: end; " >
                         <label 
                         style='
-                        font-size: 16px;
+                        font-size: 22px;
                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
                         font-weight: bold;
                         '>Update Subject</label>
