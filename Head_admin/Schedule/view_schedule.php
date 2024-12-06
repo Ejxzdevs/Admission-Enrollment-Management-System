@@ -11,21 +11,9 @@ class Show_Schedule extends DatabaseConnection{
         $stmt->execute(); 
 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $data;
-
         $this->conn = null;
-          
-        }
-
-
-      
-    
-
-
-
-
-
-
+        return $data;
+    }
 }
 
 if(isset($_GET['id'])){
@@ -34,13 +22,4 @@ if(isset($_GET['id'])){
     $result_data = $update_inquiries->select_name($id);
     
     echo json_encode(["data" => $result_data]);
-
-
-
-    
 }
-
-
-
-
-?>
