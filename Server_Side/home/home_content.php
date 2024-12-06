@@ -50,7 +50,7 @@ $data = $display_recentStudents->Student_Records();
 
             <a href="../Admission/admission.php" class="count-data">
                     <div class="iconContainer" >
-                        <img class="icons" src="../../Icons/view.png" alt="">
+                        <img class="icons" src="../../Icons/email.png" alt="">
                         <p>Total Admission</p>
                     </div>
                     <label for=""><?php echo $Count_admission; ?></label>
