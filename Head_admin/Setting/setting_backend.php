@@ -10,11 +10,9 @@ class Password extends DatabaseConnection{
         $stmt->bindParam(':id', $id);
         $stmt->execute(); 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return $data;
         $this->conn = null;
-          
-
+        return $data;
+   
         }
 
     public function Update_password($id,$np,$rnp){
@@ -29,9 +27,9 @@ class Password extends DatabaseConnection{
             $stmt->bindParam(':np', $np);
             $stmt->execute(); 
             $data = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-            return 200;
             $this->conn = null;
+            return 200;
+            
             }
         }
 
