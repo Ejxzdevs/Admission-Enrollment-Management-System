@@ -22,7 +22,7 @@ if(!isset($_SESSION['id'])){
         </div>
         <div class="header-content">
             <div class="header">
-                <p>Enrollment Management System</p>
+                <?php require_once "../navbar.php"; ?>
             </div>
             <div class="content">
                 <p>content</p>
