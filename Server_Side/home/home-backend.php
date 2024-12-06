@@ -10,14 +10,10 @@ class Count extends DatabaseConnection{
         $stmt = $this->conn->prepare($show_course);
         $stmt->execute(); 
         $data = $stmt->rowCount();
-        
         $this->conn = null;
         return $data;
-        
           
     }
-
-
     
     public function Count_Inquiries(){
 
@@ -38,11 +34,9 @@ class Count extends DatabaseConnection{
         $stmt = $this->conn->prepare($show_Student);
         $stmt->execute(); 
         $data = $stmt->rowCount();
-        
         $this->conn = null;
         return $data;
-       
-          
+
     }
 
     public function Count_admission(){
@@ -51,13 +45,10 @@ class Count extends DatabaseConnection{
         $stmt = $this->conn->prepare($show_admission);
         $stmt->execute(); 
         $data = $stmt->rowCount();
-        
         $this->conn = null;
         return $data;
-    
           
     }
-
 
     public function Student_Records(){
 
@@ -75,15 +66,8 @@ class Count extends DatabaseConnection{
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $this->conn = null;
         return $data;
-      
-
 
     }
-
-    
-    
-
-
 
 }
 
