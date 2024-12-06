@@ -1,11 +1,23 @@
 <?php 
 include "section-backend.php";
-// select schedule
-
+// SHOW SCHEDULE AS OPTION FOR CREATE & UPDATE MODAL
 $select_schedule = new Section();
 $result_schedule  = $select_schedule->Show_Schedule();
 
-//  insert section
+
+if(isset($_POST['src-submit'])){
+    // SEARCH SPECIFIC SECTION
+    $name = $_POST['search_name'];
+    $section_section = new Section();
+    $result_section  = $section_section->Search_Section($name);
+}else{
+    // SHOW SECTIONS 
+    $select_section = new Section();
+    $result_section  = $select_section->Show_Section();
+
+}
+
+//  INSERT SECTION
 if(isset($_POST['submit-section'])){
 
     $name = $_POST['section-name'];
@@ -32,7 +44,7 @@ if(isset($_POST['submit-section'])){
 
 }
 
-// update 
+// UPDATE SECTION 
 if(isset($_POST['update-section'])){
 
     $id = $_POST['id'];
@@ -59,20 +71,7 @@ if(isset($_POST['update-section'])){
 
 }
 
-if(isset($_POST['src-submit'])){
-
-    $name = $_POST['search_name'];
-    $section_section = new Section();
-    $result_section  = $section_section->Search_Section($name);
-}else{
-    // select section 
-    $select_section = new Section();
-    $result_section  = $select_section->Show_Section();
-
-}
-
-
-// delete section
+// DELETE SECTION
 if(isset($_GET['delete'])){
 
     $id = $_GET['delete'];
