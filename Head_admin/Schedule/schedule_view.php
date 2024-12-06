@@ -1,24 +1,21 @@
 <?php 
 include "schedule-backend.php";
 
+// SHOW SCHEDULE
 if(isset($_GET['id'])){
 
     $id = $_GET['id'];
-
     $select_schedule = new Schedule();
     $result_schedule  = $select_schedule->View_Schedule($id);
-
 }
 
+// UPDATE SPECIFIC SUBJECT
 if(isset($_POST['submit'])){
-
-
 
     $id = $_POST['id'];
     $time_in = $_POST['time_in'];
     $time_out = $_POST['time_out'];
 
-    
     $update_schedule = new Schedule();
     $result_update  = $update_schedule->Update_Schedule($id,$time_in,$time_out);
 
@@ -35,14 +32,7 @@ if(isset($_POST['submit'])){
             window.location.href = 'schedule.php'
         </script>";
     }
-
-
 }
-
-
-
-
-
 ?>
 <link rel="stylesheet" href="schedule_view.css">
 <!DOCTYPE html>
@@ -54,7 +44,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
     <div class="sched-label">
-        <label ></label>
+        <label>CLASS SCHEDULE: <?php echo $_GET['schedule_name']; ?></label>
     </div>
     <div class="table-container">
     <table>
@@ -76,27 +66,32 @@ if(isset($_POST['submit'])){
                 <td><?php echo $subject['day'] ?></td>
                 <td><?php echo date('h:i A',strtotime($subject['time_in'])) ?></td>
                 <td><?php echo date('h:i A',strtotime($subject['time_out'])) ?></td>
-                <td><a href="javascript: open_course('<?php echo $subject['schedule_day_id'] ?>','<?php echo $subject['subject_code'] ?>','<?php echo date('H:i',strtotime($subject['time_in'])) ?>','<?php echo date('H:i',strtotime($subject['time_out'])) ?>');"><img class="edit" src="../../Icons/edit.png" alt="" srcset=""></a></td>
+                <td><a href="javascript: open_course('<?php echo $subject['schedule_day_id'] ?>','<?php echo $subject['subject_name'] ?>','<?php echo date('H:i',strtotime($subject['time_in'])) ?>','<?php echo date('H:i',strtotime($subject['time_out'])) ?>');"><img class="edit" src="../../Icons/edit.png" alt="" srcset=""></a></td>
             </tr>
         </tbody>
         <?php } ?>
         </div>
-
-
-
 
     </table> 
 
     <div class="modal" >
     <div class="modal-container" > 
         <div class="header-schedule" >
-            <label for="">Update Schedule</label>
              <a href="javascript: close_course()"><img class="close-course" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="body-schedule">
             <form action="schedule_view.php" method="POST" >
+            <div style="padding: 1rem 0 0 0;  text-align: center;" >
+                        <label 
+                        style='
+                        font-size: 22px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                      
+                        '>Update Schedule</label>
+                        </div>
                 <div class="row-schedule">
-                    <label for="" id="subject">Subject: </label>
+                    <label style="font-weight: 400; font-size: 12px; "  for="" id="subject"></label>
                 </div>
                 <div class="row-schedule">
                     <p>Time In:</p>
@@ -110,9 +105,6 @@ if(isset($_POST['submit'])){
                 <div class="btn-sub" >
                     <button type="submit" name="submit">Submit</button>
                 </div> 
-              
-                
-              
             </form>
         </div>
     </div>
@@ -126,12 +118,8 @@ if(isset($_POST['submit'])){
         document.querySelector("#timeout").value = timeout;
         document.querySelector("#id").value = id;
         openModal.style.display = "FLEX";
-
         console.log(timeout)
-      
-    
     }
-
     function close_course(){
         openModal.style.display ="None";
     } 
