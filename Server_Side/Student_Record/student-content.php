@@ -220,16 +220,11 @@ if(isset($_POST['btn-update'])){
                                 '<?php echo $student['pri-name'] ?>',
                                 '<?php echo $student['sec'] ?>',
                                 '<?php echo $student['last'] ?>',
-                        
-
-
-
-
-
-
-
-
-
+                                 '<?php echo $student['Year'] ?>',
+                                 '<?php echo $student['Sem'] ?>',
+                                  '<?php echo $student['Section'] ?>',
+                                  '<?php echo $student['admissionType'] ?>',
+                                  '<?php echo $student['course'] ?>',
                                );">
                                     <img style="height: 16px;" src="../../Icons/edit.png" alt="" srcset="">
                                 </a>
@@ -242,28 +237,31 @@ if(isset($_POST['btn-update'])){
                                 <a href="schedule_view.php?id=<?php echo $student['schedule_id'] ?> &&name=<?php echo $student['lastName'] ?> " target="_blank">
                                     <img style="height: 16px;" src="../../Icons/weekly.png" >
                                 </a>
-                        </tr>
-                    </tbody>
+                            </tr>
+                        </tbody>
                     <?php } ?>
-                    
-               
                 </table>
             </div>
         </div>
-
     </div>
-  
 </div>
 <!-- view -->
 <div class="modal">
     <div class="modal-container"> 
         <div class="student-header">
-            <label for="">Student Information</label>
             <a href="javascript: close_info();"><img class="close" src="../../Icons/close.png" alt="" srcset=""></a>
         </div>
         <div class="student-body">
             <!-- colomn -->
             <form action="student.php" method="post">
+            <div style="text-align: center; padding: 1rem;" >
+                        <label 
+                        style='
+                        font-size: 22px;
+                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                        font-weight: bold;
+                        '>Student Informations</label>
+            </div>
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input">
@@ -306,7 +304,7 @@ if(isset($_POST['btn-update'])){
                     </select>
                 </div>
                 <div class="student-input">
-                    <label for="">Birth Date</label>
+                    <label for="">Birthdate</label>
                     <input type="date" name="bod" placeholder="Last name:" id="bod">
                 </div>
                 <div class="student-input">
@@ -327,18 +325,13 @@ if(isset($_POST['btn-update'])){
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                  
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                
                 </div>
-
             </div>
 
             <!-- 4 -->
-
-            
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input" style="width: 20%;">
@@ -361,11 +354,9 @@ if(isset($_POST['btn-update'])){
                     <label for="">&nbsp;</label>
                     <input type="text" name="zipcode" placeholder="Zip code:" id="zipcode">
                 </div>
-
             </div>
 
             <!-- 5 -->
-
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input">
@@ -384,12 +375,9 @@ if(isset($_POST['btn-update'])){
                     <label for="">&nbsp;</label>
                     <input type="text" name="fsuffix" placeholder="suffix(Optional)" id="fs">
                 </div>
-
             </div>
 
             <!-- 6 -->
-
-            
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input">
@@ -398,7 +386,6 @@ if(isset($_POST['btn-update'])){
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                    
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
@@ -406,13 +393,10 @@ if(isset($_POST['btn-update'])){
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                    
                 </div>
-
             </div>
 
             <!-- 7 -->
-
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input">
@@ -431,7 +415,6 @@ if(isset($_POST['btn-update'])){
                     <label for="">&nbsp;</label>
                     <input type="text" name="msuffix" placeholder="suffix(Optional)" id="ms">
                 </div>
-
             </div>
 
             <!-- 8 -->
@@ -444,24 +427,16 @@ if(isset($_POST['btn-update'])){
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                    
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                   
                 </div>
                 <div class="student-input">
-                    <label for="">&nbsp;</label>
-                    
+                    <label for="">&nbsp;</label> 
                 </div>
-
             </div>
 
-
-
             <!-- 9 -->
-
-
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input">
@@ -470,15 +445,12 @@ if(isset($_POST['btn-update'])){
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                    
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                   
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
-                    
                 </div>
 
             </div>
@@ -501,14 +473,11 @@ if(isset($_POST['btn-update'])){
                     </select>
                 </div>
                 <div class="student-input">
-                   
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
                 </div>
             </div>
-
-
             <!-- Secondary-->
 
             <div class="student-info">
@@ -528,7 +497,6 @@ if(isset($_POST['btn-update'])){
                     </select>
                 </div>
                 <div class="student-input">
-                   
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
@@ -536,7 +504,6 @@ if(isset($_POST['btn-update'])){
             </div>
 
             <!-- Last School Attended -->
-
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input">
@@ -554,19 +521,16 @@ if(isset($_POST['btn-update'])){
                     </select>
                 </div>
                 <div class="student-input">
-                   
                 </div>
                 <div class="student-input">
                     <label for="">&nbsp;</label>
                 </div>
-            </div>
-
-            
+            </div> 
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input" style="width: 33.3%;">
                     <label for="">Admission Type</label>
-                    <select name="admissiontype" id="">
+                    <select name="admissiontype" id="admission">
                             <OPTION value="Ruturnee">Ruturnee</OPTION>
                             <OPTION value="Transferee">Transferee</OPTION>
                             <OPTION value="Freshmen">Freshmen</OPTION>
@@ -574,7 +538,7 @@ if(isset($_POST['btn-update'])){
                 </div>
                 <div class="student-input" style="width: 33.3%;">
                     <label for="">Course</label>
-                    <select name="course" id="">
+                    <select name="course" id="course">
                         <?php foreach($result_course as $course){ ?>       
                         <option value="<?php echo $course['course_name']; ?>"><?php echo $course['course_name']; ?></option>
                         <?php } ?>
@@ -586,12 +550,11 @@ if(isset($_POST['btn-update'])){
             </div>
 
             <!-- 11 -->
-
             <div class="student-info">
                 <!-- row -->
                 <div class="student-input" style="width: 33.3%;">
                     <label for="">Year</label>
-                    <select name="year" id="">
+                    <select name="year" id="y">
                             <OPTION value="First Year">First Year</OPTION>
                             <OPTION value="Second Year">Second Year</OPTION>
                             <OPTION value="Third Year">Third Year</OPTION>
@@ -600,53 +563,33 @@ if(isset($_POST['btn-update'])){
                 </div>
                 <div class="student-input" style="width: 33.3%;">
                     <label for="">Semester</label>
-                    <select name="semester" id="">           
+                    <select name="semester" id="sem">           
                         <option value="First Semester">First Semester</option>
                         <option value="Second Semester">Second Semester</option>
                     </select>
                 </div>
                 <div class="student-input" style="width: 33.3%;">
                     <label for="">Section</label>
-                    <select name="sec" id="">           
+                    <select name="sec" id="section">           
                     <?php foreach($result_section as $section){ ?>    
                         <option value="<?php echo $section['section_id']; ?>"><?php echo $section['section_name']; ?></option>
                         <?php } ?>
                     </select>
-                    
-                    
                 </div>
             </div>
-
             <!-- 11-->
             <div class="student-submit">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                    <button type="submit" name="btn-update">UPDATE</button>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <button type="submit" name="btn-update">UPDATE</button>
             </div>
             </form>
         </div>
     </div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-     
-
-     let openModal = document.querySelector('.modal');
+    let openModal = document.querySelector('.modal');
     function edit_info(en_id,id,firstname,middlename,lastname,suffix,bod,email,number,street,city,province,country,zipcode,
-    ff,fm,fl,fs,fo,mf,mm,ml,ms,mo,gn,p,s,l
-    
-    
-    ){
+    ff,fm,fl,fs,fo,mf,mm,ml,ms,mo,gn,p,s,l,y,sem,sec,admission,course){
 
         // name
         document.querySelector('#user_id').value=id;
@@ -691,17 +634,16 @@ if(isset($_POST['btn-update'])){
         document.querySelector('#p').value=p;
         document.querySelector('#s').value=s;
         document.querySelector('#l').value=l;
-
-
-
-
-        
+        document.querySelector('#y').value=y;
+        document.querySelector('#sem').value=sem;
+        document.querySelector('#section').value=sec;
+        document.querySelector('#admission').value=admission;
+        document.querySelector('#course').value=course;
+   
         openModal.style.display ="Flex";
     }
 
     function close_info(){
         openModal.style.display = "None";
     }
-
-
 </script>
