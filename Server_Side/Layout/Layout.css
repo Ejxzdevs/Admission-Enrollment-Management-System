@@ -35,21 +35,11 @@ html,body{
     background-color: #1686C7;
 }
 .header{
-    height: 10%;
+    height: 7%;
     width: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }  
 
-.header > p{
-    font-size: 2em;
-    color: white;
-    letter-spacing: 2px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bolder;
-}
 
 .content{
     height: 90%;
