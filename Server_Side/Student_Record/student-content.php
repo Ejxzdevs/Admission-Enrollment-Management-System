@@ -2,12 +2,10 @@
 require_once 'student-backend.php';
 
 // SELECT RECORD
-
 if(isset($_POST['src-submit'])){
     $search_name = $_POST['search_name'];
     $fetch_student = new Student_Record();
-    $result_student = $fetch_student->Search_Records($search_name);
-   
+    $result_student = $fetch_student->Search_Records($search_name);  
 
 }
 else if(isset($_POST['multi-filter'])){
@@ -16,16 +14,14 @@ else if(isset($_POST['multi-filter'])){
     $section = $_POST['section'];
     $semester = $_POST['semester'];
 
-
     $fetch_student = new Student_Record();
     $result_student = $fetch_student->Student_Filter($course,$year,$section,$semester);
 }
 else{
+    // DEFAULT SHOW STUDENT
     $fetch_student = new Student_Record();
     $result_student = $fetch_student->Student_Records();
 }
-
-
 
 // SELECT COURSE
 
@@ -37,8 +33,7 @@ $result_course = $fetch_course->Select_Course();
 $fetch_section = new Student_Record();
 $result_section = $fetch_section->Select_Section();
 
-
-
+// STUDENT DELETE
 if(isset($_GET['id_delete'])){ 
 
     $id = $_GET['id_delete'];
@@ -57,12 +52,9 @@ if(isset($_GET['id_delete'])){
             window.location.href='student.php';
         </script>";
     }
-
-
 }
 
-
-
+// STUDENT UPDATE
 if(isset($_POST['btn-update'])){
 
     $enrollment_id = $_POST['enrollment_id'];
@@ -125,7 +117,6 @@ if(isset($_POST['btn-update'])){
     }
 
 }
-
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <div class="admission-application-container">
@@ -234,7 +225,7 @@ if(isset($_POST['btn-update'])){
                                 <a href="../Admission/admission_view.php?id=<?php echo $student['student_id'] ?>" target="_blank">
                                     <img style="height: 16px;" src="../../Icons/profile.png" >
                                 </a>
-                                <a href="schedule_view.php?id=<?php echo $student['schedule_id'] ?> &&name=<?php echo $student['lastName'] ?> " target="_blank">
+                                <a href="schedule_view.php?id=<?php echo $student['schedule_id'] ?> &&lname=<?php echo $student['lastName'] ?> &&fname=<?php echo $student['firstName'] ?> " target="_blank">
                                     <img style="height: 16px;" src="../../Icons/weekly.png" >
                                 </a>
                             </tr>
