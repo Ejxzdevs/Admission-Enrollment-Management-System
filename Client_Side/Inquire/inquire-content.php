@@ -29,15 +29,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 ?>
-
-
-
-
-
-
-
-
-
 <div class="courses-container">
     <div class="bg-courses">
         <label for="" data-aos="fade-left">Contact Us</label>
@@ -73,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
                         <textarea name="message" placeholder="Message" ></textarea>
                     </div>
                     <div class="box-data btn-inquire">
-                        <button type="submit">SUBMIT</button>
+                        <button type="submit">Send</button>
                     </div>
                 </form>
             </div>
