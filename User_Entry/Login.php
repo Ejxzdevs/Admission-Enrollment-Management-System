@@ -12,13 +12,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     echo $user_type = $_SESSION['user_type'];
     echo $id = $_SESSION['id'];
 
-
     if($result == 200){
         if($_SESSION['user_type'] == "Head_Admin"){
             echo
                 '<script> 
                     alert("Welcome Back Head Admin! ") 
-                    window.location.href = "../Head_admin/Schedule/schedule.php";
+                    window.location.href = "../Head_admin/home/home.php";
                  </script>';
         }else if($_SESSION['user_type'] == "Admin"){
     	    echo 
