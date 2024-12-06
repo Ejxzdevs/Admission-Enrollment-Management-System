@@ -15,6 +15,7 @@ if(!isset($_SESSION['id'])){
     <link rel="stylesheet" href="../Layout/Layout.css">
     <title>Enrollment Management System</title>
     <link rel="stylesheet" href="../sidebar/sidebar.css">
+    <link rel="stylesheet" href="home.css">
 <body>
     <div class="main-container">
         <div class="sidebar">
@@ -25,7 +26,7 @@ if(!isset($_SESSION['id'])){
                 <?php require_once "../navbar.php"; ?>
             </div>
             <div class="content">
-                <p>content</p>
+                <?php require_once "home_content.php"; ?>
             </div>
         </div>
     </div>
