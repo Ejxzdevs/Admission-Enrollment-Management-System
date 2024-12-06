@@ -204,40 +204,23 @@
 .modal-container{
     height: 100%;
     width: 60%;
-    background-color: #F3F8FA;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     box-shadow: 2px 2px 4px;
     border: #F3F8FA solid 1px;
+    margin: 1rem 0 0 0;
+
 }
 
 .student-header{
     height: 8%;
     width: 100%;
-    background-color: #4796BD;
+    background-color: #0879BB;
     display: flex;
-    flex-direction: row;
+    justify-content: end;
 }
 
-.student-header label{
-    width: 90%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 2em;
-    color: white;
-    font-size: 1.3em;
-    letter-spacing: 1px;
-}
-
-.student-header a{
-    width: 10%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .student-body{
     height: auto;
@@ -251,7 +234,6 @@
 .student-info{
     height: 5em;
     width: 100%;
-    /* border: solid 1px black; */
     display: flex;
     flex-direction: row;
     
@@ -269,20 +251,23 @@
 }
 
 .student-input label{
-    color: darkgrey;
+    font-size: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .student-input input,select{
     height: 2em;
     border-radius: 5px;
-    padding-left: 1em;
+    padding-left: 7px;
+    outline: none;
+    border: solid 1px #3C6E8B;
+    font-size: 12px;
 }
 
 
 .student-submit{
-    height: 10em;
+    height: 5em;
     width: 100%;
-    /* background-color: yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,13 +275,13 @@
 }
 
 .student-submit button{
-    background-color: #4796BD;
-    font-size: 1.2em;
+    background-color: #0879BB;
+    font-size: 16px;
     color: white;
-    letter-spacing: 2px;
-    width: 10em;
-    height: 2em;
-    border-radius: 5px;
+    width: 8em;
+    height: 2.5em;
+    border-radius: 3px;
+    border: none;
 }
 /* icons */
 .close{
