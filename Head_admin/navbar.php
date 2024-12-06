@@ -4,7 +4,6 @@
         display: flex;
         flex-direction: row;
     }
-
     .SearchBarContainer {
         width: 70%;
         padding-left: 1rem;
@@ -39,7 +38,7 @@
         flex-direction: row;
         justify-content: end;
         align-items: center;
-        gap: 25px;
+        gap: 15px;
         padding-right: 10px;
     }
     .subcontainer i {
@@ -56,7 +55,7 @@
 
     .authContainer{
         height: 100%;
-        width: 30%;
+        width: 40%;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -70,7 +69,6 @@
         <form action="">
             <i class="bi bi-search"></i>
             <input type="text" placeholder="Search Words..." >
-
         </form>
     </div>
     <div class="subcontainer" >
