@@ -4,7 +4,6 @@ include "section-backend.php";
 $select_schedule = new Section();
 $result_schedule  = $select_schedule->Show_Schedule();
 
-
 if(isset($_POST['src-submit'])){
     // SEARCH SPECIFIC SECTION
     $name = $_POST['search_name'];
