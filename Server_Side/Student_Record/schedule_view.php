@@ -7,7 +7,6 @@ if(isset($_GET['id'])){
     $name = $_GET['fname'] . " " . $_GET['lname'];
     $select_schedule = new Schedule();
     $result_schedule  = $select_schedule->View_Schedule($id);
-
 }
 
 ?>
