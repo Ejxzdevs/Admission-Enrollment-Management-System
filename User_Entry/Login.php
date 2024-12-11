@@ -9,8 +9,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $passInput = $_POST["password"];
     
     $result = $userData->UserLogin($userInput,$passInput);
-    echo $user_type = $_SESSION['user_type'];
-    echo $id = $_SESSION['id'];
+    $user_type = $_SESSION['user_type'];
+    $id = $_SESSION['id'];
 
     if($result == 200){
         if($_SESSION['user_type'] == "Head_Admin"){

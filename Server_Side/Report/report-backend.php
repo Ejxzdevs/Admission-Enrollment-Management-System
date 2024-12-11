@@ -13,8 +13,9 @@ class Report extends DatabaseConnection{
         $stmt->bindParam(':section', $section);
         
         $stmt->execute();
-        return 200;
         $this->conn = null;
+        return 200;
+
           
     }
 
@@ -28,9 +29,9 @@ class Report extends DatabaseConnection{
         $stmt = $this->conn->prepare($show_post);
         $stmt->execute(); 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        return $data;
         $this->conn = null;
+        return $data;
+
           
     }
 
@@ -38,16 +39,16 @@ class Report extends DatabaseConnection{
     public function Show_Pending_admission($gender){
 
         $admissiom_list = "SELECT * FROM (SELECT * FROM tbl_admission order by date ASC ) tbl_admission 
-        JOIN (SELECT * FROM tbl_student_info WHERE Student_Type = 'NE' AND gender = :gender ) tbl_student_info on tbl_admission.id = tbl_student_info.student_id GROUP BY tbl_admission.id";
+        JOIN (SELECT * FROM tbl_student_info WHERE Student_Type = 'NE' AND gender = :gender ) tbl_student_info on tbl_admission.id = tbl_student_info.student_id ";
         $stmt = $this->conn->prepare($admissiom_list);
         $stmt->bindParam(':gender', $gender);
         $stmt->execute(); 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     
-        
-        return $data;
         $this->conn = null;
+        return $data;
+     
           
         }
 
@@ -56,15 +57,15 @@ class Report extends DatabaseConnection{
     public function Show_Pending_admission_all(){
 
         $admissiom_list = "SELECT * FROM (SELECT * FROM tbl_admission order by date ASC ) tbl_admission 
-        JOIN (SELECT * FROM tbl_student_info WHERE Student_Type = 'NE') tbl_student_info on tbl_admission.id = tbl_student_info.student_id GROUP BY tbl_admission.id";
+        JOIN (SELECT * FROM tbl_student_info WHERE Student_Type = 'NE') tbl_student_info on tbl_admission.id = tbl_student_info.student_id ";
         $stmt = $this->conn->prepare($admissiom_list);
         $stmt->execute(); 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     
-        
-        return $data;
         $this->conn = null;
+        return $data;
+       
           
         }
 
@@ -77,7 +78,7 @@ class Report extends DatabaseConnection{
         (SELECT `section_name` from tbl_section where section_id = @Sid) as section_name 
         
         FROM tbl_enrollment WHERE Year = :year  And Sem = :sem AND section = :section order by date ASC ) tbl_enrollment 
-        JOIN (SELECT * FROM tbl_student_info WHERE Student_Type = 'E') tbl_student_info on tbl_enrollment.student_id = tbl_student_info.student_id GROUP BY tbl_enrollment.student_id";
+        JOIN (SELECT * FROM tbl_student_info WHERE Student_Type = 'E') tbl_student_info on tbl_enrollment.student_id = tbl_student_info.student_id ";
         $stmt = $this->conn->prepare($enrollment_list);
         $stmt->bindParam(':year', $year);
         $stmt->bindParam(':sem', $sem);

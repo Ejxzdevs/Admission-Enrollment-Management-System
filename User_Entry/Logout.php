@@ -5,4 +5,3 @@ if(isset($_GET['id'])){
     unset($_SESSION['id']);
     header("Location: Login.php");
 }
-?>
