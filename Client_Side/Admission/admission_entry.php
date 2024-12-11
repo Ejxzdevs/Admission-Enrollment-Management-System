@@ -98,7 +98,7 @@ class admission extends DatabaseConnection{
     
     }
 
-$this->conn = null;
+
       
     }
 }
@@ -111,9 +111,9 @@ class Course extends DatabaseConnection{
         $stmt = $this->conn->prepare($show_course);
         $stmt->execute(); 
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-        return $data;
         $this->conn = null;
+        return $data;
+      
           
     }
     
