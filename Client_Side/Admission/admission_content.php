@@ -82,15 +82,17 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input">
                         <label for="">Admission Type</label>
-                        <SELECT name="admissiontype" onchange="old();" id="admissiontype">
+                        <SELECT name="admissiontype" onchange="old();" id="admissiontype" style="border: solid 1px #767676; width: 14em;
+    font-size: 14px;" >
                             <OPTION value="Freshmen">Freshmen</OPTION>
                             <OPTION value="Transferee">Transferee</OPTION>
                             <OPTION value="Returnee">Returnee</OPTION>
                         </SELECT>
                     </div>
-                    <div class="studen-input" id="course-div" >
+                    <div class="studen-input" id="course-div"  >
                         <label for="">Course to Enroll</label>
-                        <SELECT name="course">
+                        <SELECT name="course" style="border: solid 1px #767676; width: 14em;
+    font-size: 14px;" >
                         <?php foreach($result_list as $data){?>
                             <OPTION value="<?php echo $data['course_name']; ?>"><?php echo $data['course_name']; ?></OPTION>
                         <?php  } ?>
@@ -98,8 +100,7 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input" id="id-div" style="display: none;" >
                         <label for="">ID</label>
-                        <input type="text" name="id">
-                        
+                        <input type="text" name="id" style="font-size: 14px;" >
                     </div>
                 </div>
                 <!-- CLIENT NAME -->
@@ -109,11 +110,11 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input">
                         <label for="">First Name</label>
-                        <input type="text" name="firstname" placeholder="First Name: ">
+                        <input type="text" name="firstname" placeholder="First Name: " style="font-size: 14px;" >
                     </div>
                     <div class="studen-input">
                         <label for="">Last Name</label>
-                        <input type="text" name="lastname" placeholder="Last Name:" >
+                        <input type="text" name="lastname" placeholder="Last Name:" style="font-size: 14px;" >
                     </div>
                 </div>
                 <!-- 2 -->
@@ -123,11 +124,11 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input">
                         <label for="">Middle Name</label>
-                        <input type="text" name="middlename" placeholder="Middle Name: ">
+                        <input type="text" name="middlename" placeholder="Middle Name: " style="font-size: 14px;">
                     </div>
                     <div class="studen-input">
                         <label for="">Suffix</label>
-                        <input type="text" name="suffix" placeholder="Suffix(optional)" >
+                        <input type="text" name="suffix" placeholder="Suffix(optional)" style="font-size: 14px;" >
                     </div>
                 </div>
                 <!-- GENDER CIVIL STATUS -->
@@ -137,14 +138,16 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input">
                         <label for="">GENDER</label>
-                        <SELECT name="gender">
+                        <SELECT name="gender" style="border: solid 1px #767676; width: 14em;
+    font-size: 14px;" >
                             <OPTION value="Male">MALE</OPTION>
                             <OPTION value="Female">FEMALE</OPTION>
                         </SELECT>
                     </div>
                     <div class="studen-input">
                         <label for="">CIVIL STATUS</label>
-                        <SELECT name="civilstatus">
+                        <SELECT name="civilstatus" style="border: solid 1px #767676; width: 14em;
+    font-size: 14px;" >
                             <OPTION value="Single">SINGLE</OPTION>
                             <OPTION value="Married">MARRIED</OPTION>
                             <OPTION value="Devorced">DEVORCED</OPTION>
@@ -158,8 +161,8 @@ $result_list  = $select_course->Show_Course();
                         <label for="">Date of Birth</label>
                     </div>
                     <div class="studen-input">
-                        <label for=""></label>
-                        <input style="width: 34em;" type="date" name="dob" >
+                        <label for="">Date of Birth</label>
+                        <input style="width: 34em; " type="date" name="dob" >
                     </div>
                 </div>
                 <!-- PHONE NUMBER -->
@@ -168,8 +171,8 @@ $result_list  = $select_course->Show_Course();
                         <label for="">Phone</label>
                     </div>
                     <div class="studen-input">
-                        <label for=""></label>
-                        <input style="width: 34em;" type="text" name="phone" placeholder="Contact Number: "  >
+                        <label for="">Phone Number</label>
+                        <input style="width: 34em; font-size: 14px;" type="text" name="phone" placeholder="Contact Number: "  >
                     </div> 
                 </div>
                 <!-- 1 Home address -->
@@ -178,8 +181,8 @@ $result_list  = $select_course->Show_Course();
                         <label for="">Home Address</label>
                     </div>
                     <div class="studen-input sub-input">
-                        <label for=""></label>
-                        <input style="width: 34em;" type="text" name="street" placeholder="Street:"  >
+                        <label for="">Street</label>
+                        <input style="width: 34em; font-size: 14px;" type="text" name="street" placeholder="Street:"  >
                     </div> 
                 </div>
                 <!-- 2 -->
@@ -188,12 +191,12 @@ $result_list  = $select_course->Show_Course();
                         <label for=""></label>
                     </div>
                     <div class="studen-input">
-                        <label for=""></label>
-                        <input type="text" name="city" placeholder="City: ">
+                        <label for="">City</label>
+                        <input type="text" name="city" placeholder="City:" style="font-size: 14px;">
                     </div>
                     <div class="studen-input">
-                        <label for=""></label>
-                        <input type="text" name="province" placeholder="Province:" >
+                        <label for="">Province</label>
+                        <input type="text" name="province" placeholder="Province:" style="font-size: 14px;">
                     </div>
                 </div>
                   <!-- 3 -->
@@ -202,12 +205,12 @@ $result_list  = $select_course->Show_Course();
                         <label for=""></label>
                     </div>
                     <div class="studen-input">
-                        <label for=""></label>
-                        <input type="text" name="zipcode" placeholder="Zip Code: ">
+                        <label for="">Zip Code</label>
+                        <input type="text" name="zipcode" placeholder="Zip Code: " style="font-size: 14px;">
                     </div>
                     <div class="studen-input">
-                        <label for=""></label>
-                        <input type="text" name="country" placeholder="Country:" >
+                        <label for="">Country</label>
+                        <input type="text" name="country" placeholder="Country:" style="font-size: 14px;" >
                     </div>
                 </div>
                 <!-- Email -->
@@ -216,8 +219,8 @@ $result_list  = $select_course->Show_Course();
                         <label for="">Email</label>
                     </div>
                     <div class="studen-input">
-                        <label for=""></label>
-                        <input style="width: 34em;" type="email" name="email" placeholder="Email: "  >
+                        <label for="">Email</label>
+                        <input style="width: 34em; font-size: 14px" type="email" name="email" placeholder="Email: "  >
                     </div> 
                 </div>
                 <!-- father name -->
@@ -226,12 +229,12 @@ $result_list  = $select_course->Show_Course();
                         <label for="">Father Name</label>
                     </div>
                     <div class="studen-input">
-                        <label for="">First Name</label>
-                        <input type="text" name="fatherfirstname" placeholder="First Name: ">
+                        <label for="">Father Details</label>
+                        <input type="text" name="fatherfirstname" placeholder="First Name: " style="font-size: 14px" > 
                     </div>
                     <div class="studen-input">
-                        <label for="">Last Name</label>
-                        <input type="text" name="fatherlastname" placeholder="Last Name:" >
+                        <label for=""></label>
+                        <input type="text" name="fatherlastname" placeholder="Last Name:" style="font-size: 14px">
                     </div>
                 </div>
                 <!-- 2 -->
@@ -240,12 +243,12 @@ $result_list  = $select_course->Show_Course();
                         <label for=""></label>
                     </div>
                     <div class="studen-input">
-                        <label for="">Middle Name</label>
-                        <input type="text" name="fathermiddlename" placeholder="Middle Name: ">
+                        <label for=""></label>
+                        <input type="text" name="fathermiddlename" placeholder="Middle Name: " style="font-size: 14px">
                     </div>
                     <div class="studen-input">
-                        <label for="">Suffix</label>
-                        <input type="text" name="fathersuffix" placeholder="Suffix(optional)" >
+                        <label for=""></label>
+                        <input type="text" name="fathersuffix" placeholder="Suffix(optional)" style="font-size: 14px">
                     </div>
                 </div>
                 <!-- father occupataion-->
@@ -255,7 +258,7 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input">
                         <label for=""></label>
-                        <input style="width: 34em;" type="text" name="fatheroccupation" placeholder="Occupation: "  >
+                        <input style="width: 34em; font-size: 14px" type="text" name="fatheroccupation" placeholder="Occupation: "  >
                     </div> 
                 </div>
                 <!-- mother name -->
@@ -264,12 +267,12 @@ $result_list  = $select_course->Show_Course();
                         <label for="">Mother Name</label>
                     </div>
                     <div class="studen-input">
-                        <label for="">First Name</label>
-                        <input type="text" name="motherfirstname" placeholder="First Name: ">
+                        <label for="">Mother Details</label>
+                        <input type="text" name="motherfirstname" placeholder="First Name: " style="font-size: 14px" >
                     </div>
                     <div class="studen-input">
-                        <label for="">Last Name</label>
-                        <input type="text" name="motherlastname" placeholder="Last Name:" >
+                        <label for=""></label>
+                        <input type="text" name="motherlastname" placeholder="Last Name:" style="font-size: 14px">
                     </div>
                 </div>
                 <!-- 2 -->
@@ -278,12 +281,12 @@ $result_list  = $select_course->Show_Course();
                         <label for=""></label>
                     </div>
                     <div class="studen-input">
-                        <label for="">Middle Name</label>
-                        <input type="text" name="mothermiddlename" placeholder="Middle Name: ">
+                        <label for=""></label>
+                        <input type="text" name="mothermiddlename" placeholder="Middle Name: " style="font-size: 14px">
                     </div>
                     <div class="studen-input">
-                        <label for="">Suffix</label>
-                        <input type="text" name="mothersuffix" placeholder="Suffix(optional)" >
+                        <label for=""></label>
+                        <input type="text" name="mothersuffix" placeholder="Suffix(optional)" style="font-size: 14px">
                     </div>
                 </div>
                 <!-- Mother occupataion-->
@@ -293,7 +296,7 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input" id="if-returnee">
                         <label for=""></label>
-                        <input style="width: 34em;" type="text" name="motheroccupation" placeholder="Occupation: "  >
+                        <input style="width: 34em; font-size: 14px" type="text" name="motheroccupation" placeholder="Occupation: "  >
                     </div> 
                 </div>
 
@@ -304,8 +307,8 @@ $result_list  = $select_course->Show_Course();
                         <label for="">No. Parent/Guardian</label>
                     </div>
                     <div class="studen-input">
-                        <label for=""></label>
-                        <input style="width: 34em;" type="text" name="guardian_num" placeholder="Contact: "  >
+                        <label for="">Contact Number Parent/Guardian</label>
+                        <input style="width: 34em; font-size: 14px" type="text" name="guardian_num" placeholder="Contact: "  >
                     </div> 
                 </div>
 
@@ -319,11 +322,12 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input">
                         <label for="">Primary</label>
-                        <input type="text" name="pri-name" placeholder="School Name: ">
+                        <input type="text" name="pri-name" placeholder="School Name: " style="font-size: 14px">
                     </div>
                     <div class="studen-input">
                         <label for="">Year Graduated</label>
-                        <select id="year" name="pri-year">
+                        <select id="year" name="pri-year" style="border: solid 1px #767676; width: 14em;
+    font-size: 14px;" >
                             <?php
                             for ($year = 2000; $year <= 2030; $year++) {
                                 echo "<option value=\"$year\">$year</option>";
@@ -341,11 +345,12 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input">
                         <label for="">Secondary</label>
-                        <input type="text" name="sec-name" placeholder="School Name: ">
+                        <input type="text" name="sec-name" placeholder="School Name: " style="font-size: 14px">
                     </div>
                     <div class="studen-input">
                         <label for="">Year Graduated</label>
-                        <select id="year" name="sec-year">
+                        <select id="year" name="sec-year" style="border: solid 1px #767676; width: 14em;
+    font-size: 14px;" >
                             <?php
                             for ($year = 2000; $year <= 2030; $year++) {
                                 echo "<option value=\"$year\">$year</option>";
@@ -363,11 +368,12 @@ $result_list  = $select_course->Show_Course();
                     </div>
                     <div class="studen-input">
                         <label for="">Last School Attended</label>
-                        <input type="text" name="last-name" placeholder="School Name: ">
+                        <input type="text" name="last-name" placeholder="School Name: " style="font-size: 14px">
                     </div>
                     <div class="studen-input">
                         <label for="">Last School Year Attended</label>
-                        <select id="year" name="last-year">
+                        <select id="year" name="last-year" style="border: solid 1px #767676; width: 14em;
+    font-size: 14px;" >
                             <?php
                             for ($year = 2000; $year <= 2030; $year++) {
                                 echo "<option value=\"$year\">$year</option>";
@@ -398,7 +404,7 @@ $result_list  = $select_course->Show_Course();
 <div class="modal">
     <div class="modal-container">
         <div class="modal-header">
-            <label for="">TERMS AND CONDITION</label>
+            <label for="">TERMS & CONDITION</label>
             <a href="javascript: close_message()"></a>
         </div>
         <div class="modal-body">
@@ -416,7 +422,7 @@ $result_list  = $select_course->Show_Course();
                 </div>
                 <div class="option-container">
                     <a href="admission.php">Back</a>
-                    <button id="btn_acc" onclick="terms()" disabled>ACCEPT</button>
+                    <button id="btn_acc" onclick="terms()" disabled>Accept</button>
                 </div>
             </div>
         </div>
@@ -452,7 +458,7 @@ $result_list  = $select_course->Show_Course();
    // Enable the button if the checkbox is checked, otherwise disable it
    if(checkbox.checked){
         btnTerms.disabled = false;
-        btnTerms.style.backgroundColor = '#5AA5D1';
+        btnTerms.style.backgroundColor = '#6e6868';
    }else{
         btnTerms.disabled = true;
         btnTerms.style.backgroundColor = 'darkgrey';
