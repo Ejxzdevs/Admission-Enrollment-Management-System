@@ -30,8 +30,7 @@ The Admission and Enrollment System enhances efficiency, reduces administrative 
     - Subject: CRUD functionality to manage subjects offered within courses.
  - Login/Logout
 
- ## Tech Stack 📌
- - Frontend: HTML, CSS, Bootstrap,
- - Backend: PHP
- - Database: MySQL
- - Libraries: AOS, Jquery
+## Tech Stack 📌
+- **Frontend**: HTML, CSS, Bootstrap, AJAX, AOS
+- **Backend**: PHP
+- **Database**: MySQL
