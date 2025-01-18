@@ -34,4 +34,3 @@ The Admission and Enrollment System enhances efficiency, reduces administrative 
 - **Frontend**: HTML, CSS, Bootstrap, AJAX, AOS
 - **Backend**: PHP
 - **Database**: MySQL
-- ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
