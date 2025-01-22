@@ -31,6 +31,6 @@ The Admission and Enrollment System enhances efficiency, reduces administrative 
  - Login/Logout
 
 ## Tech Stack 📌
-- **Frontend**: HTML, CSS, Bootstrap, AJAX, AOS
+- **Frontend**: HTML, CSS, Bootstrap,JS, AJAX, AOS
 - **Backend**: PHP
 - **Database**: MySQL
