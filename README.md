@@ -2,6 +2,7 @@
 ## Overview 📌
 The Admission and Enrollment System enhances efficiency, reduces administrative workload, and improves the overall user experience by automating and streamlining the admission and enrollment processes for both students and staff.
 
+## Sample Website Design Highlight
 ![Logo](Overview.png)
 
 ## Features 📌
