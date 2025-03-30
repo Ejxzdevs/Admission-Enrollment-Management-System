@@ -65,13 +65,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
                 <div class="user-input">
                     <label for="username">
-                        <img class="login-icon" src="../icons/user.png" alt="username">
+                        <img class="login-icon" src="../Icons/user.png" alt="username">
                         <input type="text" name="username" placeholder="Username" id="username" required>
                     </label>
                 </div>
                 <div class="user-input">
                     <label for="password">
-                        <img class="login-icon" src="../icons/lock.png" alt="password">
+                        <img class="login-icon" src="../Icons/lock.png" alt="password">
                         <input type="password" name="password" placeholder="Password" id="password" required>
                     </label>
                 </div>
