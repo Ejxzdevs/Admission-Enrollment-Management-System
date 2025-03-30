@@ -5,7 +5,7 @@
     </div>
     <div class="sidebar-content">
         <ul >
-            <li><a href="../home/home.php"><img class="nav-icons" src="../../icons/dashboard.png" >Dashboard</a></li>
+            <li><a href="../home/home.php"><img class="nav-icons" src="../../Icons/dashboard.png" >Dashboard</a></li>
             <li><a href="../Schedule/schedule.php"><img class="nav-icons" src="../../Icons/conversation.png" >Schedule</a></li>
             <li><a href="../Section/section.php"><img class="nav-icons" src="../../Icons/skills.png" >Section</a></li>
             <li><a href="../Course/course.php"><img class="nav-icons" src="../../Icons/copy-writing.png" >Course</a></li>

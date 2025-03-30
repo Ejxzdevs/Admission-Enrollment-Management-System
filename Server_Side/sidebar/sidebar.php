@@ -5,15 +5,15 @@
     </div>
     <div class="sidebar-content">
         <ul >
-            <li><a href="../home/home.php"><img class="nav-icons" src="../../icons/dashboard.png" >Dashboard</a></li>
-            <li><a href="#" id="transaction"><img class="nav-icons" src="../../icons/transaction.png" >Application<img class="right-arrow" id="arr-ryt" src="../../icons/right-arrow.svg" ></a>
+            <li><a href="../home/home.php"><img class="nav-icons" src="../../Icons/dashboard.png" >Dashboard</a></li>
+            <li><a href="#" id="transaction"><img class="nav-icons" src="../../Icons/transaction.png" >Application<img class="right-arrow" id="arr-ryt" src="../../Icons/right-arrow.svg" ></a>
                 <ul  class="sub-transaction" id="sub-transaction">
                     <li style="border: none;"><a href="../Admission/admission.php">Admission</a></li>
                     <li style="border: none;"><a href="../Enrollment/enrollment.php">Enrollment</a></li>
                     
                 </ul>
             </li>
-            <li><a href="#" id="Maintinance"><img id="sub-transaction-img" class="nav-icons" src="../../icons/transaction.png" >Student Record<img class="right-arrow " id="arr-maintinance"  src="../../icons/right-arrow.svg" ></a>
+            <li><a href="#" id="Maintinance"><img id="sub-transaction-img" class="nav-icons" src="../../Icons/transaction.png" >Student Record<img class="right-arrow " id="arr-maintinance"  src="../../Icons/right-arrow.svg" ></a>
                 <ul  class="sub-transaction" id="sub-maintinance">
                     <li style="border: none;"><a href="../../Server_Side/Student_Record/student.php">Student</a></li>
                     <!-- <li style="border: none;"><a href="../../Server_Side/Student_Record/payment.php">Payment</a></li> -->
@@ -21,11 +21,11 @@
                     <!-- <li style="border: none;"><a href="../../Server_Side/Student_Record/cor.php">COR</a></li> -->
                 </ul>
             </li>
-            <li><a href="../Inquiry/inquiry.php"><img class="nav-icons" src="../../icons/conversation.png" >Inquiry</a></li>
-            <li><a href="../Public/public.php"><img class="nav-icons" src="../../icons/copy-writing.png" >Public</a></li>
-            <li><a href="../Report/report.php"><img class="nav-icons" src="../../icons/report.png" >Reports</a></li>
-            <li><a href="../Setting/setting.php"><img class="nav-icons" src="../../icons/setting.png" >Settings</a></li>
-            <li><a href="../../User_Entry/Logout.php?id=<?php echo $_SESSION['id'] ?>"><img class="nav-icons" src="../../icons/exit.png" >Logout</a></li>
+            <li><a href="../Inquiry/inquiry.php"><img class="nav-icons" src="../../Icons/conversation.png" >Inquiry</a></li>
+            <li><a href="../Public/public.php"><img class="nav-icons" src="../../Icons/copy-writing.png" >Public</a></li>
+            <li><a href="../Report/report.php"><img class="nav-icons" src="../../Icons/report.png" >Reports</a></li>
+            <li><a href="../Setting/setting.php"><img class="nav-icons" src="../../Icons/setting.png" >Settings</a></li>
+            <li><a href="../../User_Entry/Logout.php?id=<?php echo $_SESSION['id'] ?>"><img class="nav-icons" src="../../Icons/exit.png" >Logout</a></li>
         </ul>
     </div>
   
