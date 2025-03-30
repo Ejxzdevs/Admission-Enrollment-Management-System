@@ -2,6 +2,7 @@
 ## Overview 📌
 The Admission and Enrollment System enhances efficiency, reduces administrative workload, and improves the overall user experience by automating and streamlining the admission and enrollment processes for both students and staff.
 
+## Sample Website Design Highlight
 ![Logo](Overview.png)
 
 ## Features 📌
@@ -31,6 +32,10 @@ The Admission and Enrollment System enhances efficiency, reduces administrative 
  - Login/Logout
 
 ## Tech Stack 📌
+<<<<<<< HEAD
 - **Frontend**: HTML, CSS, Bootstrap, JS , AJAX, AOS
+=======
+- **Frontend**: HTML, CSS, Bootstrap,JS, AJAX, AOS
+>>>>>>> 85600c17f552d8b4d585ba4a6bd9816567794fc9
 - **Backend**: PHP
 - **Database**: MySQL
