@@ -32,39 +32,40 @@ CREATE TABLE IF NOT EXISTS `tbl_account` (
 
 -- Dumping data for table enrollment_system.tbl_account: ~7 rows (approximately)
 REPLACE INTO `tbl_account` (`id`, `username`, `password`, `status`, `user_type`, `admission_status`) VALUES
-	(1, 'admin', 'a', 'Enable', 'Admin', ''),
+	(1, 'admin', 'admin', 'Enable', 'Admin', ''),
 	(3, 'a', 'a', 'Enable', 'Student', ''),
 	(7, 'client', 'client', 'Enable', 'Client', ''),
 	(12, 'ejhaygofredo@gmail.com', '2', 'Enable', 'Client', 'Off'),
 	(17, 'test@gmail.com', '12345', 'Enable', 'Client', 'Off'),
-	(18, 'head', 'head', 'Enable', 'Head_Admin', ''),
+	(18, 'headadmin', 'headadmin', 'Enable', 'Head_Admin', ''),
 	(19, 'b', '5', 'Enable', 'Head_Admin', '');
 
 -- Dumping structure for table enrollment_system.tbl_admission
 CREATE TABLE IF NOT EXISTS `tbl_admission` (
   `admission_id` int NOT NULL AUTO_INCREMENT,
   `id` int NOT NULL,
-  `date` date NOT NULL,
   `status` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`admission_id`),
   KEY `id` (`id`),
   CONSTRAINT `tbl_admission_ibfk_1` FOREIGN KEY (`id`) REFERENCES `tbl_student_info` (`student_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table enrollment_system.tbl_admission: ~14 rows (approximately)
-REPLACE INTO `tbl_admission` (`admission_id`, `id`, `date`, `status`) VALUES
-	(62, 58, '2024-03-19', 'Read'),
-	(63, 59, '2024-03-20', 'Read'),
-	(64, 60, '2024-03-20', 'Read'),
-	(65, 61, '2024-03-20', 'Read'),
-	(66, 62, '2024-03-20', 'Read'),
-	(67, 63, '2024-03-20', 'Read'),
-	(68, 64, '2024-03-20', 'Read'),
-	(69, 65, '2024-03-20', 'Read'),
-	(70, 66, '2024-03-20', 'Read'),
-	(71, 67, '2024-03-20', 'Read'),
-	(72, 68, '2024-03-20', 'Read'),
-	(75, 71, '2024-03-20', 'Pending');
+-- Dumping data for table enrollment_system.tbl_admission: ~12 rows (approximately)
+REPLACE INTO `tbl_admission` (`admission_id`, `id`, `status`, `date`) VALUES
+	(62, 58, 'Read', '2024-12-11 11:35:24'),
+	(63, 59, 'Read', '2024-12-11 11:35:24'),
+	(64, 60, 'Read', '2024-12-11 11:35:24'),
+	(65, 61, 'Read', '2024-12-11 11:35:24'),
+	(66, 62, 'Read', '2024-12-11 11:35:24'),
+	(67, 63, 'Read', '2024-12-11 11:35:24'),
+	(68, 64, 'Read', '2024-12-11 11:35:24'),
+	(69, 65, 'Read', '2024-12-11 11:35:24'),
+	(70, 66, 'Read', '2024-12-11 11:35:24'),
+	(71, 67, 'Read', '2024-12-11 11:35:24'),
+	(72, 68, 'Read', '2024-12-11 11:35:24'),
+	(75, 71, 'Read', '2024-12-11 11:35:24'),
+	(76, 74, 'Read', '2024-12-11 11:35:36');
 
 -- Dumping structure for table enrollment_system.tbl_course
 CREATE TABLE IF NOT EXISTS `tbl_course` (
@@ -100,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `tbl_enrollment` (
   PRIMARY KEY (`enrollment_id`),
   KEY `student_id` (`student_id`),
   CONSTRAINT `tbl_enrollment_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `tbl_student_info` (`student_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table enrollment_system.tbl_enrollment: ~10 rows (approximately)
 REPLACE INTO `tbl_enrollment` (`enrollment_id`, `student_id`, `Section`, `Year`, `Sem`, `Remark`, `Cor`, `date`) VALUES
@@ -113,7 +114,8 @@ REPLACE INTO `tbl_enrollment` (`enrollment_id`, `student_id`, `Section`, `Year`,
 	(65, 68, '8', 'Second Year', 'Second Semester', 'Incomplete', 'Not Generated', '2024-09-04 16:04:13'),
 	(67, 64, '7', 'Fourth Year', 'First Semester', 'Completed', 'Not Generated', '2024-10-04 16:04:13'),
 	(68, 62, '8', 'Third Year', 'Second Semester', 'Incomplete', 'Not Generated', '2024-12-04 16:04:13'),
-	(69, 63, '7', 'First Year', 'First Semester', 'Form 137', 'Not Generated', '2024-12-04 16:04:13');
+	(69, 63, '7', 'First Year', 'First Semester', 'Form 137', 'Not Generated', '2024-12-04 16:04:13'),
+	(70, 61, '7', 'Third Year', 'Second Semester', NULL, 'Not Generated', '2024-12-11 10:01:06');
 
 -- Dumping structure for table enrollment_system.tbl_inquiry
 CREATE TABLE IF NOT EXISTS `tbl_inquiry` (
@@ -165,21 +167,20 @@ CREATE TABLE IF NOT EXISTS `tbl_reports` (
   `Semester` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `section` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `gender` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `date` date NOT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`report_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table enrollment_system.tbl_reports: ~9 rows (approximately)
+-- Dumping data for table enrollment_system.tbl_reports: ~8 rows (approximately)
 REPLACE INTO `tbl_reports` (`report_id`, `report_title`, `year`, `Semester`, `section`, `gender`, `date`) VALUES
-	(41, 'Admission Student', 'First Year', 'First Semester', 'ALL', 'ALL', '2024-03-20'),
-	(42, 'Admission Student', 'First Year', 'First Semester', 'ALL', 'Male', '2024-03-20'),
-	(43, 'Admission Student', 'First Year', 'First Semester', 'ALL', 'Female', '2024-03-20'),
-	(44, 'Enrolled Student', 'First Year', 'First Semester', '7', 'ALL', '2024-03-20'),
-	(45, 'Enrolled Student', 'First Year', 'First Semester', '8', 'ALL', '2024-03-20'),
-	(46, 'Enrolled Student', 'Second Year', 'First Semester', '8', 'ALL', '2024-03-20'),
-	(47, 'Enrolled Student', 'Second Year', 'First Semester', 'ALL', 'ALL', '2024-03-20'),
-	(48, 'Enrolled Student', 'Second Year', 'Second Semester', 'ALL', 'ALL', '2024-03-20'),
-	(49, 'Enrolled Student', 'Fourth Year', 'First Semester', 'ALL', 'ALL', '2024-03-20');
+	(41, 'Admission Student', 'First Year', 'First Semester', 'ALL', 'ALL', '2024-12-11 17:26:19'),
+	(42, 'Admission Student', 'First Year', 'First Semester', 'ALL', 'Male', '2024-12-11 17:26:19'),
+	(43, 'Admission Student', 'First Year', 'First Semester', 'ALL', 'Female', '2024-12-11 17:26:19'),
+	(44, 'Enrolled Student', 'First Year', 'First Semester', '7', 'ALL', '2024-12-11 17:26:19'),
+	(45, 'Enrolled Student', 'First Year', 'First Semester', '8', 'ALL', '2024-12-11 17:26:19'),
+	(46, 'Enrolled Student', 'Second Year', 'First Semester', '8', 'ALL', '2024-12-11 17:26:19'),
+	(49, 'Enrolled Student', 'Fourth Year', 'First Semester', 'ALL', 'ALL', '2024-12-11 17:26:19'),
+	(50, 'Admission Student', 'First Year', 'First Semester', 'ALL', 'ALL', '2024-12-11 17:26:28');
 
 -- Dumping structure for table enrollment_system.tbl_requirements
 CREATE TABLE IF NOT EXISTS `tbl_requirements` (
@@ -254,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `tbl_schedule_day` (
   PRIMARY KEY (`schedule_day_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table enrollment_system.tbl_schedule_day: ~15 rows (approximately)
+-- Dumping data for table enrollment_system.tbl_schedule_day: ~18 rows (approximately)
 REPLACE INTO `tbl_schedule_day` (`schedule_day_id`, `schedule_id`, `subject`, `day`, `time_in`, `time_out`) VALUES
 	(62, 26, '7', 'Monday', '07:30:00.000000', '09:00:00.000000'),
 	(63, 26, 'Recess', 'Monday', '09:00:00.000000', '09:30:00.000000'),
@@ -330,9 +331,9 @@ CREATE TABLE IF NOT EXISTS `tbl_student_info` (
   `last-year` varchar(15) COLLATE utf8mb4_general_ci NOT NULL,
   `gnumber` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`student_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table enrollment_system.tbl_student_info: ~12 rows (approximately)
+-- Dumping data for table enrollment_system.tbl_student_info: ~15 rows (approximately)
 REPLACE INTO `tbl_student_info` (`student_id`, `firstName`, `middleName`, `lastName`, `Suffix`, `gender`, `street`, `city`, `province`, `country`, `zipCode`, `email`, `number`, `civilStatus`, `fatherFirstname`, `fatherMiddlename`, `fatherLastname`, `fatherSuffix`, `fatherOccupation`, `motherFirstname`, `motherMiddlename`, `motherLastname`, `motherSuffix`, `MotherOccupation`, `course`, `Bod`, `admissionType`, `Student_Type`, `pri-name`, `pri-year`, `sec`, `sec-year`, `last`, `last-year`, `gnumber`) VALUES
 	(58, 'John Erick', 'Gofredo', 'Langub', '', 'Male', 'San Miguel St', 'San Jose', 'Bulacan', 'Philippines', '2030', 'johnerick.gofredo@yahoo.com', 'Bulacan', 'Single', 'Roderick', 'Mariano', 'Gofredo', 'Sr', 'Police', 'Mariala', 'Pardillo', 'Langub', '', 'OFW', 'BSTM', '2024-03-06', 'Freshmen', 'E', 'SES', '2000', 'PNHS', '2000', 'BestLink', '2000', '0928-234-1242'),
 	(59, 'Roland', 'a', 'Mangulabnan', 'jr', 'Male', 'San Miguel St', 'San Jose', 'Bulacan', 'Philippines', '2030', 'roland.mangulabnan@yahoo.com', '09626341248', 'Single', 'Roband', 'S', 'Mangulabnan', 'Sr', 'Programmer', 'Maria', 'S', 'Mangulabnan', '', 'OFW', 'BSIT', '2024-03-08', 'Freshmen', 'E', 'SES', '2012', 'PNHS', '2018', 'BestLink', '2024', '0923-231-3142'),
@@ -345,7 +346,10 @@ REPLACE INTO `tbl_student_info` (`student_id`, `firstName`, `middleName`, `lastN
 	(66, 'Nicolaine', 'N', 'Perez', '', 'Female', 'San Miguel St', 'San Jose', 'Bulacan', 'Philippines', '2030', 'nicollaine.perez@yahoo.com', '09616341248', 'Devorced', 'Nicky', 'N', 'Pereze', '', 'Programmer', 'Nick', 'C', 'Perez', '', 'Designer', 'BSIT', '2024-03-15', 'Freshmen', 'NE', 'SES', '2012', 'PNHS', '2018', 'BestLink', '2024', '0923-231-3142'),
 	(67, 'Cheska', 'M', 'Bartolome', '', 'Female', 'San Miguel St', 'San Jose', 'Bulacan', 'Philippines', '2030', 'cheska.bartolome@yahoo.com', '09626341248', 'Single', 'Chester', 'K', 'Bartolome', '', 'Networking', 'Chesk', 'L', 'Bartolome', '', 'OFW', 'BSIT', '2024-03-08', 'Freshmen', 'E', 'SES', '2012', '', '2018', 'PDM', '2024', '0923-231-3142'),
 	(68, 'Faye', 'C', 'Tubale', '', 'Female', 'San Miguel St', 'San Jose', 'Bulacan', 'Philippines', '2030', 'faye@yahoo.com', '09616341248', 'Married', 'Fer', 'N', 'Tubale', '', 'Programmer', 'Fayer', 'N', 'Tubale', '', 'Designer', 'BSIT', '2024-03-02', 'Transferee', 'E', 'SES', '2010', 'PNHS', '2016', 'BestLink', '2022', '0923-231-3142'),
-	(71, 'Angelica', 'Q', 'Del Valle', '', 'Female', 'San Miguel St', 'San Jose', 'Bulacan', 'Philippines', '2030', 'angelica@yahoo.com', '09616341248', 'Single', 'andew', 'q', 'Del valle', 'Sr', 'Police', 'Angela', 'V', 'Del Valle', '', 'Designer', 'BSIT', '2024-03-01', 'Freshmen', 'NE', 'SES', '2004', 'PNHS', '2012', 'PDM', '2024', '0923-231-3142');
+	(71, 'Angelica', 'Q', 'Del Valle', '', 'Female', 'San Miguel St', 'San Jose', 'Bulacan', 'Philippines', '2030', 'angelica@yahoo.com', '09616341248', 'Single', 'andew', 'q', 'Del valle', 'Sr', 'Police', 'Angela', 'V', 'Del Valle', '', 'Designer', 'BSIT', '2024-03-01', 'Freshmen', 'NE', 'SES', '2004', 'PNHS', '2012', 'PDM', '2024', '0923-231-3142'),
+	(72, 'test', 'test', 'test', 'test', 'Male', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'Married', 'test', '', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'BSTM', '2024-12-06', 'Transferee', 'NE', 'test', '2010', 'test', '2000', 'test', '2000', 'test'),
+	(73, 'test', 'test', 'test', 'test', 'Male', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'Married', 'test', '', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'BSTM', '2024-12-06', 'Transferee', 'NE', 'test', '2010', 'test', '2000', 'test', '2000', 'test'),
+	(74, 'test', 'test', 'test', 'test', 'Male', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'Married', 'test', '', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'BSTM', '2024-12-06', 'Transferee', 'NE', 'test', '2010', 'test', '2000', 'test', '2000', 'test');
 
 -- Dumping structure for table enrollment_system.tbl_subject
 CREATE TABLE IF NOT EXISTS `tbl_subject` (
@@ -357,7 +361,7 @@ CREATE TABLE IF NOT EXISTS `tbl_subject` (
   PRIMARY KEY (`subject_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table enrollment_system.tbl_subject: ~8 rows (approximately)
+-- Dumping data for table enrollment_system.tbl_subject: ~9 rows (approximately)
 REPLACE INTO `tbl_subject` (`subject_id`, `subject_name`, `subject_code`, `subject_description`, `subject_unit`) VALUES
 	(4, 'OOP', '213', 'Object-oriented programming (OOP)', '3'),
 	(5, 'Gen-Math', 'BSIT-Math', 'General Mathematics aims to develop learners\' unde', '3'),
