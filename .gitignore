@@ -4,4 +4,4 @@
 # Ignore all .env files
 **/.env
 
-**/.Image-Container
+!**/Image-Container/.gitkeep
