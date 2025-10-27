@@ -10,7 +10,6 @@ class Show_Inquiries extends DatabaseConnection{
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     return $data;
-    $this->conn = null;
       
     }
 
@@ -22,18 +21,7 @@ class Show_Inquiries extends DatabaseConnection{
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
     return $data;
-    $this->conn = null;
-          
     }
-
-
-
     
 }
 
-
-
-
-
-
-?>

@@ -12,7 +12,6 @@ class Public_Content extends DatabaseConnection{
         
         $stmt->execute();
         return 200;
-        $this->conn = null;
           
     }
 
@@ -24,8 +23,6 @@ class Public_Content extends DatabaseConnection{
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         return $data;
-        $this->conn = null;
-          
     }
 
     public function update_Content($id,$title,$message,$fileDestination){
@@ -38,9 +35,7 @@ class Public_Content extends DatabaseConnection{
         $stmt->bindParam(':title', $title);
         $stmt->execute(); 
 
-        return 200;
-        $this->conn = null;
-          
+        return 200;          
     }
 
     public function delete_Post($id){
@@ -50,15 +45,7 @@ class Public_Content extends DatabaseConnection{
         $stmt->execute(); 
 
         return 200;
-        $this->conn = null;
-          
     }
-    
-
- 
-
-
-    
 }
 
 

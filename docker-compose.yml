@@ -1,51 +1,58 @@
+version: "3.9"
+
 services:
-  # PHP service
   php:
     build: .
-    container_name: enrollment_system_php_prod
+    container_name: admission_enrollment_php
     ports:
-      - "80:80"
+      - "81:80"
     depends_on:
       - mysql
     networks:
-      - my-network
-      
-  # MySQL service
+      admission-network:
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+    volumes:
+      - ./:/var/www/html
+
   mysql:
     image: mysql:8.0
-    container_name: enrollment_system_mysqli_prod
+    container_name: admission_enrollment_mysql
+    restart: always
+    command: --init-file /docker-entrypoint-initdb.d/enrollment_system_schema.sql
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASS}
       MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
-      - my-network
+      admission-network:
     volumes:
-      - mysql-data:/var/lib/mysql
-      - ./enrollment_system.sql:/docker-entrypoint-initdb.d/enrollment_system.sql
+      - admission-mysql-data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d:ro
 
-  # PHPMyAdmin service (added here)
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: enrollment_system_phpmyadmin_prod
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: admission_enrollment_phpmyadmin
+    restart: always
+    depends_on:
+      - mysql
     environment:
       PMA_HOST: mysql
       PMA_USER: ${DB_USER}
-      PMA_PASSWORD: ${DB_PASS} 
+      PMA_PASSWORD: ${DB_PASS}
     ports:
-      - "8080:80"
+      - "8081:80"
     networks:
-      - my-network
-    depends_on:
-    - mysql
-    volumes:
-      - mysql-data:/var/lib/mysql
-  
+      admission-network:
 
 networks:
-  my-network:
-    driver: bridge
+  admission-network: {}
 
 volumes:
-  mysql-data:
+  admission-mysql-data:
